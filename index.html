@@ -2,761 +2,1849 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title></title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Govind's Portfolio" name="keywords">
-    <meta content="Govind's Portfolio" name="description">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Govind Mudavadkar — AI/ML & Software Engineer</title>
+  <meta name="description"
+    content="Govind Mudavadkar — AI/ML Engineer at Pfizer. I design agentic AI and multimodal RAG systems, then ship them end to end with FastAPI, React, Docker, Kubernetes and AWS.">
+  <meta name="author" content="Govind Mudavadkar">
+  <meta name="theme-color" content="#FBFAF8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#101314" media="(prefers-color-scheme: dark)">
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Govind Mudavadkar — AI/ML & Software Engineer">
+  <meta property="og:description"
+    content="Agentic AI, multimodal RAG and the production systems around them. AI/ML Engineer at Pfizer.">
+  <meta property="og:image" content="assets/govind.jpg">
+  <meta name="twitter:card" content="summary">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230F7A6B'/><text x='50' y='69' font-size='54' font-family='Helvetica,Arial' font-weight='700' fill='%23fff' text-anchor='middle'>G</text></svg>">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet">
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <style>
+    /* ============================================================
+       TOKENS
+       ============================================================ */
+    :root {
+      color-scheme: light;
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+      --bg: #FBFAF8;
+      --bg-alt: #F4F2EE;
+      --card: #FFFFFF;
+      --card-hover: #FFFFFF;
+      --line: #E8E4DD;
+      --line-soft: #F0EDE7;
 
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+      --ink: #1B1A18;
+      --ink-2: #5A554E;
+      --ink-3: #8C867D;
 
+      --brand: #0F7A6B;
+      --brand-strong: #0B5C50;
+      --brand-wash: #E9F3F0;
+      --accent: #A75F1C;
 
-    <link href="css/style.css" rel="stylesheet">
+      --shadow-sm: 0 1px 2px rgba(27, 26, 24, .04), 0 1px 3px rgba(27, 26, 24, .04);
+      --shadow-md: 0 2px 4px rgba(27, 26, 24, .03), 0 8px 24px rgba(27, 26, 24, .06);
+      --shadow-lg: 0 4px 8px rgba(27, 26, 24, .04), 0 20px 48px rgba(27, 26, 24, .10);
+
+      --radius: 14px;
+      --radius-sm: 9px;
+      --maxw: 1080px;
+      --nav-h: 62px;
+
+      --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+      --font-display: 'Space Grotesk', 'Inter', ui-sans-serif, system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        color-scheme: dark;
+
+        --bg: #101314;
+        --bg-alt: #15191A;
+        --card: #181D1E;
+        --card-hover: #1C2223;
+        --line: #272D2F;
+        --line-soft: #1F2526;
+
+        --ink: #EDEAE4;
+        --ink-2: #A6A199;
+        --ink-3: #78726A;
+
+        --brand: #4FC2AC;
+        --brand-strong: #7FD6C5;
+        --brand-wash: rgba(79, 194, 172, .10);
+        --accent: #D99A4E;
+
+        --shadow-sm: 0 1px 2px rgba(0, 0, 0, .3);
+        --shadow-md: 0 2px 4px rgba(0, 0, 0, .2), 0 8px 24px rgba(0, 0, 0, .28);
+        --shadow-lg: 0 4px 8px rgba(0, 0, 0, .24), 0 20px 48px rgba(0, 0, 0, .38);
+      }
+    }
+
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+
+      --bg: #101314;
+      --bg-alt: #15191A;
+      --card: #181D1E;
+      --card-hover: #1C2223;
+      --line: #272D2F;
+      --line-soft: #1F2526;
+
+      --ink: #EDEAE4;
+      --ink-2: #A6A199;
+      --ink-3: #78726A;
+
+      --brand: #4FC2AC;
+      --brand-strong: #7FD6C5;
+      --brand-wash: rgba(79, 194, 172, .10);
+      --accent: #D99A4E;
+
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, .3);
+      --shadow-md: 0 2px 4px rgba(0, 0, 0, .2), 0 8px 24px rgba(0, 0, 0, .28);
+      --shadow-lg: 0 4px 8px rgba(0, 0, 0, .24), 0 20px 48px rgba(0, 0, 0, .38);
+    }
+
+    /* ============================================================
+       BASE
+       ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      line-height: 1.18;
+      letter-spacing: -.021em;
+      margin: 0;
+      color: var(--ink);
+    }
+
+    p { margin: 0 0 1em; color: var(--ink-2); }
+    p:last-child { margin-bottom: 0; }
+
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { color: var(--brand-strong); }
+
+    ul { margin: 0; padding: 0; list-style: none; }
+    img { max-width: 100%; display: block; }
+
+    :focus-visible {
+      outline: 2px solid var(--brand);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    .wrap {
+      width: 100%;
+      max-width: var(--maxw);
+      min-width: 0;
+      margin-inline: auto;
+      padding-inline: 20px;
+    }
+
+    /* every auto-fit grid must be able to collapse below its min-content */
+    .stats, .edu-grid, .skills, .proj-grid, .certs, .connect-grid, .about-grid, .hero-grid {
+      min-width: 0;
+    }
+    .stat, .edu, .skillcard, .proj, .cert, .link-card, .job, .pub { min-width: 0; }
+
+    .sr {
+      position: absolute; width: 1px; height: 1px;
+      padding: 0; margin: -1px; overflow: hidden;
+      clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+    }
+
+    .skip {
+      position: absolute; left: 12px; top: -60px; z-index: 200;
+      background: var(--brand); color: #fff; padding: 10px 16px;
+      border-radius: 8px; font-size: 14px; font-weight: 600;
+      transition: top .18s ease;
+    }
+    .skip:focus { top: 12px; color: #fff; }
+
+    /* ============================================================
+       NAV
+       ============================================================ */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      height: var(--nav-h);
+      display: flex; align-items: center;
+      background: var(--bg);
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      backdrop-filter: saturate(170%) blur(14px);
+      -webkit-backdrop-filter: saturate(170%) blur(14px);
+      border-bottom: 1px solid transparent;
+      transition: border-color .25s ease, background .25s ease;
+    }
+    .nav.is-stuck {
+      border-bottom-color: var(--line);
+      background: var(--bg);
+      background: color-mix(in srgb, var(--bg) 92%, transparent);
+    }
+
+    .nav .wrap {
+      display: flex; align-items: center; gap: 14px;
+    }
+
+    .brand {
+      display: inline-flex; align-items: center; gap: 9px;
+      font-family: var(--font-display);
+      font-weight: 700; font-size: 15.5px;
+      letter-spacing: -.02em;
+      color: var(--ink); white-space: nowrap;
+    }
+    .brand:hover { color: var(--ink); }
+    .brand .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--brand);
+      box-shadow: 0 0 0 3px var(--brand-wash);
+      flex: none;
+    }
+
+    .nav-links {
+      display: flex; align-items: center; gap: 2px;
+      margin-left: auto;
+    }
+    .nav-links a {
+      position: relative;
+      padding: 7px 11px; border-radius: 7px;
+      font-size: 13.5px; font-weight: 500;
+      color: var(--ink-2);
+      transition: color .16s ease, background .16s ease;
+    }
+    .nav-links a:hover { color: var(--ink); background: var(--bg-alt); }
+    .nav-links a.active { color: var(--brand); background: var(--brand-wash); }
+
+    .nav-tools { display: flex; align-items: center; gap: 8px; margin-left: 8px; }
+
+    .icon-btn {
+      display: inline-grid; place-items: center;
+      width: 34px; height: 34px; flex: none;
+      border: 1px solid var(--line); border-radius: 9px;
+      background: var(--card); color: var(--ink-2);
+      cursor: pointer; padding: 0;
+      transition: color .16s, border-color .16s, background .16s;
+    }
+    .icon-btn:hover { color: var(--brand); border-color: var(--brand); }
+    .icon-btn svg { width: 16px; height: 16px; }
+
+    [data-theme="dark"] .sun, .moon { display: none; }
+    [data-theme="dark"] .moon { display: block; }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) .sun { display: none; }
+      :root:not([data-theme="light"]) .moon { display: block; }
+    }
+
+    .nav-toggle { display: none; }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        position: fixed; inset: var(--nav-h) 0 auto 0;
+        flex-direction: column; align-items: stretch; gap: 2px;
+        background: var(--bg);
+        border-bottom: 1px solid var(--line);
+        padding: 10px 20px 18px;
+        box-shadow: var(--shadow-md);
+        transform: translateY(-8px);
+        opacity: 0; visibility: hidden; pointer-events: none;
+        transition: opacity .18s ease, transform .18s ease, visibility .18s;
+      }
+      .nav-links.open { opacity: 1; visibility: visible; transform: none; pointer-events: auto; }
+      .nav-links a { padding: 11px 12px; font-size: 15px; }
+      .nav-tools { margin-left: auto; }
+      .nav-toggle { display: inline-grid; }
+    }
+
+    /* ============================================================
+       HERO
+       ============================================================ */
+    .hero {
+      position: relative;
+      padding: clamp(44px, 8vw, 92px) 0 clamp(36px, 5vw, 56px);
+      overflow: hidden;
+    }
+    .hero::before {
+      content: ""; position: absolute; z-index: 0;
+      top: -32%; left: 50%; transform: translateX(-50%);
+      width: min(1200px, 150%); aspect-ratio: 1 / .55;
+      background:
+        radial-gradient(60% 60% at 30% 42%, color-mix(in srgb, var(--brand) 16%, transparent), transparent 70%),
+        radial-gradient(50% 50% at 74% 34%, color-mix(in srgb, var(--accent) 11%, transparent), transparent 72%);
+      filter: blur(28px);
+      opacity: .85; pointer-events: none;
+    }
+    .hero .wrap { position: relative; z-index: 1; }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: clamp(28px, 5vw, 60px);
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      max-width: 100%; flex-wrap: wrap; row-gap: 2px;
+      font-family: var(--font-mono); font-size: 12px; font-weight: 500;
+      letter-spacing: .04em; text-transform: uppercase;
+      color: var(--brand);
+      background: var(--brand-wash);
+      border: 1px solid color-mix(in srgb, var(--brand) 22%, transparent);
+      padding: 5px 11px; border-radius: 100px;
+      margin-bottom: 20px;
+    }
+    .pulse {
+      width: 6px; height: 6px; border-radius: 50%; background: var(--brand); flex: none;
+      animation: pulse 2.4s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--brand) 60%, transparent); }
+      60% { box-shadow: 0 0 0 6px transparent; }
+    }
+
+    .hero h1 {
+      font-size: clamp(2.3rem, 6.4vw, 3.65rem);
+      font-weight: 700;
+      letter-spacing: -.034em;
+      margin-bottom: 12px;
+    }
+
+    .roleline {
+      font-family: var(--font-mono);
+      font-size: clamp(.95rem, 2.4vw, 1.1rem);
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 18px;
+      min-height: 1.6em;
+    }
+    .roleline .rl-prefix { color: var(--ink-3); }
+    .roleline .rl-word { color: var(--brand); }
+    .caret {
+      display: inline-block; width: 2px; height: 1.05em;
+      background: var(--brand); vertical-align: -.18em; margin-left: 2px;
+      animation: blink 1.05s steps(1) infinite;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    .hero-lede {
+      font-size: clamp(1rem, 2.2vw, 1.09rem);
+      line-height: 1.68;
+      max-width: 54ch;
+      margin-bottom: 26px;
+    }
+
+    .cta-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 17px; border-radius: 10px;
+      font-size: 14.5px; font-weight: 600;
+      border: 1px solid transparent; cursor: pointer;
+      transition: transform .15s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease, color .18s ease;
+      white-space: nowrap;
+    }
+    .btn svg { width: 16px; height: 16px; flex: none; }
+    .btn:active { transform: translateY(1px); }
+
+    .btn-primary {
+      background: var(--brand); color: #fff;
+      box-shadow: 0 1px 2px color-mix(in srgb, var(--brand) 32%, transparent),
+                  0 6px 18px color-mix(in srgb, var(--brand) 22%, transparent);
+    }
+    .btn-primary:hover {
+      background: var(--brand-strong); color: #fff;
+      box-shadow: 0 2px 4px color-mix(in srgb, var(--brand) 30%, transparent),
+                  0 10px 26px color-mix(in srgb, var(--brand) 28%, transparent);
+    }
+    [data-theme="dark"] .btn-primary { color: #06201C; }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) .btn-primary { color: #06201C; }
+    }
+
+    .btn-ghost {
+      background: var(--card); color: var(--ink); border-color: var(--line);
+      box-shadow: var(--shadow-sm);
+    }
+    .btn-ghost:hover { color: var(--brand); border-color: var(--brand); background: var(--card-hover); }
+
+    /* portrait */
+    .portrait { position: relative; justify-self: center; line-height: 0; }
+    .portrait { --psize: clamp(176px, 25vw, 244px); }
+    .portrait img {
+      width: var(--psize);
+      height: var(--psize);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--card);
+      box-shadow: var(--shadow-lg);
+    }
+    .portrait::after {
+      content: ""; position: absolute; inset: -11px;
+      border-radius: 50%;
+      border: 1px dashed color-mix(in srgb, var(--brand) 38%, transparent);
+      pointer-events: none;
+      animation: spin 36s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    @media (max-width: 820px) {
+      .hero-grid { grid-template-columns: minmax(0, 1fr); text-align: left; }
+      .eyebrow { font-size: 10.5px; letter-spacing: .03em; padding: 5px 10px; gap: 7px; }
+      .portrait { justify-self: start; order: -1; }
+      .eyebrow { margin-bottom: 16px; }
+    }
+
+    /* stats strip */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-top: clamp(34px, 5vw, 52px);
+    }
+    .stat { background: var(--bg); padding: 16px 14px; text-align: center; }
+    .stat b {
+      display: block;
+      font-family: var(--font-display);
+      font-size: clamp(1.15rem, 2.9vw, 1.55rem);
+      font-weight: 700; letter-spacing: -.028em;
+      color: var(--ink); line-height: 1.2;
+    }
+    .stat span {
+      display: block; margin-top: 3px;
+      font-size: 11.5px; line-height: 1.4;
+      color: var(--ink-3);
+      letter-spacing: .012em;
+    }
+    @media (max-width: 760px) {
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .stat:last-child { grid-column: 1 / -1; }
+    }
+
+    /* ============================================================
+       SECTIONS
+       ============================================================ */
+    section { scroll-margin-top: calc(var(--nav-h) + 12px); }
+
+    .band { padding: clamp(54px, 8vw, 92px) 0; }
+    .band-alt { background: var(--bg-alt); border-block: 1px solid var(--line-soft); }
+
+    .sec-head { margin-bottom: clamp(28px, 4vw, 44px); max-width: 62ch; }
+    .sec-label {
+      display: flex; align-items: center; gap: 10px;
+      font-family: var(--font-mono); font-size: 11.5px; font-weight: 500;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--brand); margin-bottom: 12px;
+    }
+    .sec-label::after {
+      content: ""; height: 1px; flex: 1; max-width: 48px;
+      background: color-mix(in srgb, var(--brand) 40%, transparent);
+    }
+    .sec-head h2 {
+      font-size: clamp(1.6rem, 4vw, 2.1rem);
+      font-weight: 700; letter-spacing: -.03em;
+    }
+    .sec-head p { margin-top: 10px; font-size: 1rem; }
+
+    /* ============================================================
+       ABOUT
+       ============================================================ */
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+      gap: clamp(26px, 4vw, 52px);
+      align-items: start;
+    }
+    .about-body p { font-size: 1.015rem; line-height: 1.75; }
+    .about-body strong { color: var(--ink); font-weight: 600; }
+
+    .facts {
+      display: grid; gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .fact {
+      background: var(--card);
+      padding: 13px 16px;
+      display: flex; align-items: baseline; justify-content: space-between; gap: 14px;
+    }
+    .fact dt {
+      font-family: var(--font-mono); font-size: 11.5px;
+      letter-spacing: .05em; text-transform: uppercase; color: var(--ink-3);
+      white-space: nowrap;
+    }
+    .fact dd {
+      margin: 0; font-size: 14px; font-weight: 500; color: var(--ink);
+      text-align: right;
+    }
+    .fact dd .ok { color: var(--brand); font-weight: 600; }
+
+    @media (max-width: 860px) { .about-grid { grid-template-columns: minmax(0, 1fr); } }
+
+    /* ============================================================
+       TIMELINE / EXPERIENCE
+       ============================================================ */
+    .tl { position: relative; padding-left: 26px; }
+    .tl::before {
+      content: ""; position: absolute; left: 5px; top: 10px; bottom: 10px;
+      width: 2px; border-radius: 2px;
+      background: linear-gradient(to bottom, var(--brand), color-mix(in srgb, var(--brand) 18%, transparent));
+    }
+    .tl-item { position: relative; padding-bottom: 26px; }
+    .tl-item:last-child { padding-bottom: 0; }
+    .tl-item::before {
+      content: ""; position: absolute; left: -26px; top: 22px;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--bg); border: 2.5px solid var(--brand);
+      box-shadow: 0 0 0 4px var(--bg);
+    }
+    .band-alt .tl-item::before { background: var(--bg-alt); box-shadow: 0 0 0 4px var(--bg-alt); }
+
+    .job {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px clamp(18px, 3vw, 26px);
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow .22s ease, border-color .22s ease, transform .22s ease;
+    }
+    .job:hover { box-shadow: var(--shadow-md); border-color: color-mix(in srgb, var(--brand) 34%, var(--line)); }
+
+    .job-top {
+      display: flex; flex-wrap: wrap; gap: 4px 16px;
+      align-items: baseline; justify-content: space-between;
+      margin-bottom: 3px;
+    }
+    .job h3 { font-size: 1.11rem; font-weight: 600; letter-spacing: -.022em; }
+    .job .when {
+      font-family: var(--font-mono); font-size: 12px; font-weight: 500;
+      color: var(--ink-3); white-space: nowrap;
+    }
+    .job .where {
+      font-size: 14px; font-weight: 500; color: var(--brand);
+      margin-bottom: 14px;
+    }
+    .job .where .sep { color: var(--ink-3); font-weight: 400; margin-inline: 6px; }
+    .job .where .loc { color: var(--ink-3); font-weight: 400; }
+
+    .bullets li {
+      position: relative;
+      padding-left: 19px; margin-bottom: 9px;
+      font-size: 14.8px; line-height: 1.62; color: var(--ink-2);
+    }
+    .bullets li:last-child { margin-bottom: 0; }
+    .bullets li::before {
+      content: ""; position: absolute; left: 2px; top: .66em;
+      width: 5px; height: 5px; border-radius: 50%;
+      background: color-mix(in srgb, var(--brand) 55%, transparent);
+    }
+    .bullets strong { color: var(--ink); font-weight: 600; }
+    .m { font-family: var(--font-mono); font-size: .93em; font-weight: 500; color: var(--ink); }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 15px; }
+    .tag {
+      font-family: var(--font-mono); font-size: 11.5px; font-weight: 400;
+      color: var(--ink-2); background: var(--bg-alt);
+      border: 1px solid var(--line-soft);
+      padding: 3px 9px; border-radius: 6px;
+      white-space: nowrap;
+    }
+    .band-alt .tag { background: var(--bg); }
+
+    /* ============================================================
+       EDUCATION
+       ============================================================ */
+    .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(290px, 100%), 1fr)); gap: 16px; }
+    .edu {
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 22px;
+      box-shadow: var(--shadow-sm);
+      display: flex; gap: 16px; align-items: flex-start;
+      transition: box-shadow .22s ease, border-color .22s ease;
+    }
+    .edu:hover { box-shadow: var(--shadow-md); border-color: color-mix(in srgb, var(--brand) 34%, var(--line)); }
+    .edu .cap {
+      display: grid; place-items: center; flex: none;
+      width: 40px; height: 40px; border-radius: 11px;
+      background: var(--brand-wash); color: var(--brand);
+    }
+    .edu .cap svg { width: 20px; height: 20px; }
+    .edu h3 { font-size: 1.02rem; margin-bottom: 2px; }
+    .edu .deg { font-size: 14.5px; color: var(--ink-2); margin-bottom: 9px; }
+    .edu .meta {
+      display: flex; flex-wrap: wrap; gap: 6px 14px;
+      font-family: var(--font-mono); font-size: 11.8px; color: var(--ink-3);
+    }
+    .edu .meta .gpa { color: var(--brand); font-weight: 500; }
+
+    /* ============================================================
+       SKILLS
+       ============================================================ */
+    .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 16px; }
+    .skillcard {
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 20px;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow .22s ease, border-color .22s ease;
+    }
+    .skillcard:hover { box-shadow: var(--shadow-md); border-color: color-mix(in srgb, var(--brand) 34%, var(--line)); }
+    .skillcard h3 {
+      display: flex; align-items: center; gap: 9px;
+      font-size: .97rem; margin-bottom: 14px;
+    }
+    .skillcard h3 svg { width: 17px; height: 17px; color: var(--brand); flex: none; }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+    .chip {
+      font-size: 12.8px; font-weight: 500; color: var(--ink-2);
+      background: var(--bg-alt); border: 1px solid var(--line-soft);
+      padding: 4px 10px; border-radius: 7px;
+      transition: color .15s, background .15s, border-color .15s;
+    }
+    .chip:hover { color: var(--brand); background: var(--brand-wash); border-color: color-mix(in srgb, var(--brand) 26%, transparent); }
+
+    /* ============================================================
+       PROJECTS
+       ============================================================ */
+    .proj-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(318px, 100%), 1fr)); gap: 16px; }
+    .proj {
+      display: flex; flex-direction: column;
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 21px;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow .22s ease, border-color .22s ease, transform .22s ease;
+    }
+    .proj:hover {
+      box-shadow: var(--shadow-md); transform: translateY(-2px);
+      border-color: color-mix(in srgb, var(--brand) 34%, var(--line));
+    }
+    .proj-top {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      gap: 12px; margin-bottom: 4px;
+    }
+    .proj h3 { font-size: 1.03rem; letter-spacing: -.02em; }
+    @media (min-width: 700px) { .proj-top { min-height: 2.9em; } }
+    .proj h3 a { color: var(--ink); }
+    .proj h3 a:hover { color: var(--brand); }
+    .proj .repo {
+      display: inline-grid; place-items: center; flex: none;
+      width: 30px; height: 30px; border-radius: 8px;
+      border: 1px solid var(--line); color: var(--ink-3);
+      transition: color .16s, border-color .16s, background .16s;
+    }
+    .proj .repo:hover { color: var(--brand); border-color: var(--brand); background: var(--brand-wash); }
+    .proj .repo svg { width: 15px; height: 15px; }
+    .proj .kind {
+      font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+      letter-spacing: .05em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 11px;
+    }
+    .proj .bullets { flex: 1; }
+    .proj .bullets li { font-size: 14.3px; margin-bottom: 8px; }
+
+    /* ============================================================
+       PUBLICATIONS
+       ============================================================ */
+    .pubs {
+      display: grid; gap: 1px; background: var(--line);
+      border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
+    }
+    .pub {
+      background: var(--card); padding: 18px clamp(16px, 2.6vw, 22px);
+      display: flex; gap: 16px; align-items: flex-start;
+      transition: background .18s ease;
+    }
+    .pub:hover { background: var(--card-hover); }
+    .pub .idx {
+      font-family: var(--font-mono); font-size: 11.5px; font-weight: 500;
+      color: var(--brand); padding-top: 3px; flex: none; min-width: 22px;
+    }
+    .pub-body { flex: 1; min-width: 0; }
+    .pub h3 { font-size: .99rem; font-weight: 600; line-height: 1.45; margin-bottom: 5px; }
+    .pub .venue {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px;
+      font-size: 13px; color: var(--ink-3);
+    }
+    .pub .venue em { font-style: normal; font-family: var(--font-mono); font-size: 12px; color: var(--ink-2); }
+    .pub .venue .yr {
+      font-family: var(--font-mono); font-size: 11px;
+      background: var(--bg-alt); border: 1px solid var(--line-soft);
+      padding: 2px 7px; border-radius: 5px; color: var(--ink-3);
+    }
+    .pub .link {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: 13px; font-weight: 600; color: var(--brand);
+    }
+    .pub .link svg { width: 12px; height: 12px; }
+
+    /* ============================================================
+       CERTIFICATIONS
+       ============================================================ */
+    .certs { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(284px, 100%), 1fr)); gap: 14px; }
+    .cert {
+      display: flex; gap: 14px; align-items: flex-start;
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 17px 18px;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow .22s ease, border-color .22s ease;
+    }
+    .cert:hover { box-shadow: var(--shadow-md); border-color: color-mix(in srgb, var(--brand) 34%, var(--line)); }
+    .cert .badge {
+      display: grid; place-items: center; flex: none;
+      width: 36px; height: 36px; border-radius: 10px;
+      background: var(--brand-wash); color: var(--brand);
+    }
+    .cert .badge svg { width: 18px; height: 18px; }
+    .cert h3 { font-size: .94rem; font-weight: 600; line-height: 1.42; margin-bottom: 3px; }
+    .cert .issuer { font-size: 13px; color: var(--ink-2); }
+    .cert .date { font-family: var(--font-mono); font-size: 11.5px; color: var(--ink-3); margin-top: 3px; }
+
+    .more-wrap { margin-top: 18px; text-align: center; }
+    #certMore[hidden] { display: none; }
+    #certMore { margin-top: 14px; }
+
+    /* ============================================================
+       CONNECT
+       ============================================================ */
+    .connect-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(282px, 100%), 1fr)); gap: 14px; }
+    .link-card {
+      display: flex; align-items: center; gap: 14px;
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 17px 18px;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow .22s ease, border-color .22s ease, transform .22s ease;
+    }
+    .link-card:hover {
+      box-shadow: var(--shadow-md); transform: translateY(-2px);
+      border-color: color-mix(in srgb, var(--brand) 40%, var(--line));
+    }
+    .link-card .ic {
+      display: grid; place-items: center; flex: none;
+      width: 40px; height: 40px; border-radius: 11px;
+      background: var(--brand-wash); color: var(--brand);
+      transition: background .2s ease;
+    }
+    .link-card:hover .ic { background: var(--brand); color: #fff; }
+    [data-theme="dark"] .link-card:hover .ic { color: #06201C; }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) .link-card:hover .ic { color: #06201C; }
+    }
+    .link-card .ic svg { width: 19px; height: 19px; }
+    .link-card .lc-body { min-width: 0; }
+    .link-card .lc-t {
+      display: block; font-family: var(--font-mono); font-size: 11px;
+      letter-spacing: .07em; text-transform: uppercase; color: var(--ink-3);
+    }
+    .link-card .lc-v {
+      display: block; font-size: 14.3px; font-weight: 600; color: var(--ink);
+      line-height: 1.4; overflow-wrap: anywhere;
+    }
+
+    .cta-panel {
+      margin-top: 26px;
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: clamp(22px, 4vw, 34px);
+      text-align: center; box-shadow: var(--shadow-sm);
+    }
+    .cta-panel h3 { font-size: clamp(1.2rem, 3vw, 1.45rem); margin-bottom: 8px; }
+    .cta-panel p { max-width: 46ch; margin-inline: auto; margin-bottom: 20px; font-size: .98rem; }
+    .cta-panel .cta-row { justify-content: center; }
+
+    /* ============================================================
+       FOOTER
+       ============================================================ */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 26px 0;
+      background: var(--bg);
+    }
+    footer .wrap {
+      display: flex; flex-wrap: wrap; gap: 10px 18px;
+      align-items: center; justify-content: space-between;
+    }
+    footer p { font-size: 13px; color: var(--ink-3); margin: 0; }
+    footer .fl { display: flex; gap: 14px; }
+    footer .fl a { color: var(--ink-3); display: grid; place-items: center; transition: color .16s; }
+    footer .fl a:hover { color: var(--brand); }
+    footer .fl svg { width: 17px; height: 17px; }
+
+    /* ============================================================
+       TO TOP
+       ============================================================ */
+    .totop {
+      position: fixed; right: 20px; bottom: 20px; z-index: 90;
+      width: 40px; height: 40px; border-radius: 11px;
+      display: grid; place-items: center;
+      background: var(--card); color: var(--ink-2);
+      border: 1px solid var(--line); box-shadow: var(--shadow-md);
+      cursor: pointer; padding: 0;
+      opacity: 0; visibility: hidden; transform: translateY(8px);
+      transition: opacity .2s ease, transform .2s ease, visibility .2s, color .16s, border-color .16s;
+    }
+    .totop.show { opacity: 1; visibility: visible; transform: none; }
+    .totop:hover { color: var(--brand); border-color: var(--brand); }
+    .totop svg { width: 17px; height: 17px; }
+
+    /* ============================================================
+       REVEAL
+       ============================================================ */
+    .rv { opacity: 0; transform: translateY(14px); transition: opacity .55s cubic-bezier(.22,.8,.3,1), transform .55s cubic-bezier(.22,.8,.3,1); }
+    .rv.in { opacity: 1; transform: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .001ms !important;
+      }
+      .rv { opacity: 1; transform: none; }
+    }
+
+    @media print {
+      .nav, .totop, .hero::before, .portrait::after { display: none !important; }
+      body { background: #fff; color: #000; }
+    }
+  </style>
 </head>
 
-<body data-spy="scroll" data-target=".navbar" data-offset="51">
-    <!-- Navbar Start -->
-    <nav class="navbar fixed-top shadow-sm navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5">
-        <a href="index.html" class="navbar-brand ml-lg-3">
-            <h1 class="m-0 display-5"><span class="text-dark">Govind </span>Mudavadkar</h1>
-        </a>
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
+<body>
+  <a class="skip" href="#about">Skip to content</a>
+
+  <!-- ===== icon sprite ===== -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-github" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 .5C5.73.5.5 5.73.5 12.01c0 5.09 3.29 9.4 7.86 10.93.58.11.79-.25.79-.56 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.03 11.03 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.8 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.21.68.8.56A11.52 11.52 0 0 0 23.5 12.01C23.5 5.73 18.27.5 12 .5Z" />
+      </symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14Zm1.78 13.02H3.55V9h3.57v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z" />
+      </symbol>
+      <symbol id="i-scholar" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M5.24 13.77 0 9.5 12 0l12 9.5-5.24 4.27C17.55 11.25 14.98 9.5 12 9.5s-5.55 1.75-6.76 4.27Z" />
+        <path d="M12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14Z" />
+      </symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="4" width="20" height="16" rx="2.5" />
+        <path d="m2.5 6.5 8.4 6a2 2 0 0 0 2.2 0l8.4-6" />
+      </symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z" />
+      </symbol>
+      <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7l-5-5Z" />
+        <path d="M14 2v5h5M9 13h6M9 17h4" />
+      </symbol>
+      <symbol id="i-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 4h6v6M20 4 10 14M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5" />
+      </symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <circle cx="12" cy="12" r="4.2" />
+        <path d="M12 2v2.4M12 19.6V22M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2 12h2.4M19.6 12H22M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7" />
+      </symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" />
+      </symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M3 6h18M3 12h18M3 18h18" />
+      </symbol>
+      <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M5 5l14 14M19 5 5 19" />
+      </symbol>
+      <symbol id="i-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </symbol>
+      <symbol id="i-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21.5 8.5 12 3.8 2.5 8.5 12 13.2l9.5-4.7Z" />
+        <path d="M6.3 10.8v5.1c0 1.7 2.6 3.1 5.7 3.1s5.7-1.4 5.7-3.1v-5.1M21.5 8.5v5.6" />
+      </symbol>
+      <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m8 17-5-5 5-5M16 7l5 5-5 5M13.5 4l-3 16" />
+      </symbol>
+      <symbol id="i-brain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="2.1" />
+        <circle cx="5" cy="6" r="1.9" /><circle cx="19" cy="6" r="1.9" />
+        <circle cx="5" cy="18" r="1.9" /><circle cx="19" cy="18" r="1.9" />
+        <path d="m6.6 7.1 3.9 3.6M17.4 7.1l-3.9 3.6M6.6 16.9l3.9-3.6M17.4 16.9l-3.9-3.6" />
+      </symbol>
+      <symbol id="i-server" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2.5" y="3" width="19" height="7" rx="2" />
+        <rect x="2.5" y="14" width="19" height="7" rx="2" />
+        <path d="M6.5 6.5h.01M6.5 17.5h.01" />
+      </symbol>
+      <symbol id="i-db" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <ellipse cx="12" cy="5.5" rx="8" ry="3.2" />
+        <path d="M4 5.5v13c0 1.8 3.6 3.2 8 3.2s8-1.4 8-3.2v-13M4 12c0 1.8 3.6 3.2 8 3.2s8-1.4 8-3.2" />
+      </symbol>
+      <symbol id="i-cloud" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M17.5 19H7a4.5 4.5 0 0 1-.6-8.96 6 6 0 0 1 11.5 1.7A3.75 3.75 0 0 1 17.5 19Z" />
+      </symbol>
+      <symbol id="i-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="9" r="6" />
+        <path d="m8.2 14.3-1.4 7.2L12 18.9l5.2 2.6-1.4-7.2" />
+      </symbol>
+      <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 4.5A1.5 1.5 0 0 1 4.5 3H9a3 3 0 0 1 3 3v15a2.4 2.4 0 0 0-2.4-2.4H3Z" />
+        <path d="M21 4.5A1.5 1.5 0 0 0 19.5 3H15a3 3 0 0 0-3 3v15a2.4 2.4 0 0 1 2.4-2.4H21Z" />
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ===================== NAV ===================== -->
+  <nav class="nav" id="nav">
+    <div class="wrap">
+      <a class="brand" href="#top"><span class="dot"></span>Govind Mudavadkar</a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#certifications" id="navCert" hidden>Certifications</a>
+        <a href="#connect">Connect</a>
+      </div>
+
+      <div class="nav-tools">
+        <button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle colour theme">
+          <svg class="sun"><use href="#i-sun" /></svg>
+          <svg class="moon"><use href="#i-moon" /></svg>
         </button>
-        <div class="collapse navbar-collapse px-lg-3" id="navbarCollapse">
-            <div class="navbar-nav m-auto py-0">
-                <a href="#home" class="nav-item nav-link active">Home</a>
-                <a href="#about" class="nav-item nav-link">About</a>
-                <a href="#qualification" class="nav-item nav-link">Quality</a>
-                <a href="#skill" class="nav-item nav-link">Skill</a>
-
-                <a href="#portfolio" class="nav-item nav-link">Portfolio</a>
-
-                <!--  <a href="#contact" class="nav-item nav-link">Contact</a> -->
-            </div>
-            <a href="https://www.linkedin.com/in/govind-mudavadkar-26a3441b7/" target="_blank"
-                class="btn btn-menu d-none d-lg-block" style="background-color:#161414; color: #fef5f5;">Connect with
-                me</a>
-        </div>
-    </nav>
-    <!-- Navbar End -->
-
-
-
-    <!-- Header Start -->
-    <div class="container-fluid header-color d-flex align-items-center mb-5 py-5" id="home" style="min-height: 100vh;">
-        <div class="container">
-            <div class="row align-items-center">
-
-                <div class="col-lg-7 text-center text-lg-left">
-                    <h3 class="text-white font-weight-normal mb-3">Hi there, I'm</h3>
-                    <h1 class="display-3 text-uppercase text-dark mb-2" style="-webkit-text-stroke: 4px #ffffff;">
-                        Govind <br>Mudavadkar</h1>
-                    <h1 class="typed-text-output d-inline font-weight-lighter text-white"></h1>
-                    <div class="typed-text d-none">Data Scientist and Full Stack Software Developer</div>
-
-                </div>
-                <div class="col-lg-6 px-8 pl-lg-0 pb-5 pb-lg-4 about-img">
-                    <img class="img-fluid w-100 rounded-circle shadow-sm" src="img/govindimg.jpeg" alt=""
-                        style="width: 550px; height: 550px;">
-                </div>
-            </div>
-        </div>
+        <button class="icon-btn nav-toggle" id="navBtn" type="button" aria-label="Toggle navigation"
+          aria-expanded="false" aria-controls="navLinks">
+          <svg class="m-open"><use href="#i-menu" /></svg>
+        </button>
+      </div>
     </div>
-    <!-- Header End -->
+  </nav>
 
+  <!-- ===================== HERO ===================== -->
+  <header class="hero" id="top">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow"><span class="pulse"></span>Open to AI/ML &amp; Software Engineering roles</span>
 
+          <h1>Govind Mudavadkar</h1>
 
-    <!-- About Start -->
-    <div class="container-fluid py-5" id="about">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">About</h1>
-                <h1 class="position-absolute text-uppercase text-dark">About Me</h1>
-            </div>
-            <div class="row align-items-center">
+          <div class="roleline" aria-live="off">
+            <span class="rl-prefix">I build&nbsp;</span><span class="rl-word" id="roleWord"></span><span class="caret"></span>
+          </div>
+          <p class="sr">AI/ML Engineer, Software Engineer, Full-Stack Developer and Data Scientist.</p>
 
-                <div class="col-lg-12">
-                    <h2 class="mb-4"> Passionate Data Scientist, ML & LLM Enthusiast, and Full-Stack Developer crafting intelligent solutions! </h2>
-                    <h5>I am currently enrolled in the Master's program in Computer Software Engineering Systems at
-                        Northeastern University in Boston. I completed my undergraduate studies in Computer Science at
-                        Pune University, India, with an impressive CGPA of 9.11. My approach to work involves adeptly
-                        managing multiple tasks while maintaining a strong commitment to continuous learning. I am a
-                        firm believer in the value of hard work and approach every challenge with unwavering
-                        determination.</h5>
-                    <div class="row mb-3">
-                        <div class="col-sm-6 py-2">
-                            <h5>Name: <span class="text-secondary">Govind Mudavadkar</span></h5>
-                        </div>
-                        <div class="col-sm-6 py-2">
-                            <h5>Birthday: <span class="text-secondary">03 December 2001</span></h5>
-                        </div>
-                        <div class="col-sm-6 py-2">
-                            <h5>Degree: <span class="text-secondary">Master's in Computer Software Engineering</span></h5>
-                        </div>
-                        <div class="col-sm-6 py-2">
-                            <h5>Email: <span class="text-secondary">mudavadkar.g@northeastern.edu</span></h5>
-                        </div>
+          <p class="hero-lede">
+            AI/ML Engineer at <strong style="color:var(--ink);font-weight:600">Pfizer</strong>, where I design agentic
+            AI and multimodal RAG systems — then ship them end to end with FastAPI, React, Docker, Kubernetes and AWS.
+            M.S. Computer Engineering, Northeastern. 7+ peer-reviewed publications.
+          </p>
 
-                    </div>
-
-                </div>
-            </div>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#connect">
+              <svg><use href="#i-mail" /></svg>Get in touch
+            </a>
+            <a class="btn btn-ghost" href="resume/Govind_Mudavadkar_AI_ML_Resume.pdf" target="_blank" rel="noopener">
+              <svg><use href="#i-doc" /></svg>Résumé — AI/ML
+            </a>
+            <a class="btn btn-ghost" href="resume/Govind_Mudavadkar_Software_Resume.pdf" target="_blank" rel="noopener">
+              <svg><use href="#i-doc" /></svg>Résumé — Software
+            </a>
+          </div>
         </div>
+
+        <div class="portrait">
+          <img src="assets/govind.jpg" width="640" height="640" alt="Govind Mudavadkar" fetchpriority="high">
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><b>800+</b><span>hours saved annually</span></div>
+        <div class="stat"><b>2&nbsp;min → 50&nbsp;s</b><span>inference latency cut</span></div>
+        <div class="stat"><b>400+</b><span>daily platform queries</span></div>
+        <div class="stat"><b>50+</b><span>scientists served</span></div>
+        <div class="stat"><b>7+</b><span>peer-reviewed papers</span></div>
+      </div>
     </div>
-    <!-- About End -->
+  </header>
 
+  <!-- ===================== ABOUT ===================== -->
+  <section class="band" id="about">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="sec-label">01 — About</div>
+        <h2>Research-grade AI, production-grade engineering.</h2>
+      </div>
 
-
-
-    <!-- Skill Start -->
-    <div class="container-fluid py-5" id="skill">
-    <div class="container">
-        <div class="position-relative d-flex align-items-center justify-content-center">
-            <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Skills</h1>
-            <h1 class="position-absolute text-uppercase text-dark">My Skills</h1>
+      <div class="about-grid">
+        <div class="about-body rv">
+          <p>
+            I build AI systems that actually ship. At <strong>Pfizer</strong> I architect agentic platforms — LangGraph
+            agents, multimodal RAG, MCP tooling — and then take them the whole way to production: FastAPI services,
+            React front ends, Docker and Kubernetes on AWS, serving 50+ scientists every day.
+          </p>
+          <p>
+            My background is deliberately wide. I started in backend engineering — Java, Spring Boot and REST APIs at
+            <strong>BMC Software</strong> — spent two years as a research assistant training PyTorch vision models and
+            squeezing 2.5× throughput out of ONNX INT8 inference, and now sit at the intersection of the two: the
+            person who can take a research idea, prove it with rigorous evaluation, and hand back a deployed service
+            with latency budgets, guardrails and CI/CD behind it.
+          </p>
+          <p>
+            What I care about is <strong>measured impact over demos</strong>. Latency from two minutes to fifty
+            seconds. Hallucination rate under 5% against a 300-query eval set. 800+ hours of manual work removed each
+            year. Every number on this page has a system behind it — and an evaluation harness proving it.
+          </p>
+          <p>
+            Outside work I write research. Seven-plus peer-reviewed papers across medical imaging, document
+            intelligence and multi-agent systems, most recently on coverage-gap-aware multi-agent RAG for ESG
+            compliance auditing.
+          </p>
         </div>
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <div class="skill mb-4">
-                    <div class="d-flex justify-content-between">
-                        <h6 class="font-weight-bold">Data Science & Analytics</h6>
-                        <h6 class="font-weight-bold">90%</h6>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-                <div class="skill mb-4">
-                    <div class="d-flex justify-content-between">
-                        <h6 class="font-weight-bold">Full Stack Development</h6>
-                        <h6 class="font-weight-bold">90%</h6>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar bg-success" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-                <div class="skill mb-4">
-                    <div class="d-flex justify-content-between">
-                        <h6 class="font-weight-bold">Cloud Environments</h6>
-                        <h6 class="font-weight-bold">95%</h6>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="skill mb-4">
-                    <div class="d-flex justify-content-between">
-                        <h6 class="font-weight-bold">Machine Learning and LLM</h6>
-                        <h6 class="font-weight-bold">95%</h6>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar bg-success" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-                <div class="skill mb-4">
-                    <div class="d-flex justify-content-between">
-                        <h6 class="font-weight-bold">Python</h6>
-                        <h6 class="font-weight-bold">90%</h6>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar bg-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-                <div class="skill mb-4">
-                    <div class="d-flex justify-content-between">
-                        <h6 class="font-weight-bold">Java</h6>
-                        <h6 class="font-weight-bold">85%</h6>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar bg-info" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+        <dl class="facts rv">
+          <div class="fact">
+            <dt>Role</dt>
+            <dd>AI/ML Engineer</dd>
+          </div>
+          <div class="fact">
+            <dt>Company</dt>
+            <dd>Pfizer Inc</dd>
+          </div>
+          <div class="fact">
+            <dt>Based in</dt>
+            <dd>Boston / Groton, CT</dd>
+          </div>
+          <div class="fact">
+            <dt>Degree</dt>
+            <dd>M.S. Computer Engineering</dd>
+          </div>
+          <div class="fact">
+            <dt>School</dt>
+            <dd>Northeastern University</dd>
+          </div>
+          <div class="fact">
+            <dt>GPA</dt>
+            <dd><span class="ok">3.8 / 4.0</span></dd>
+          </div>
+          <div class="fact">
+            <dt>Focus</dt>
+            <dd>Agentic AI · RAG · MLOps</dd>
+          </div>
+          <div class="fact">
+            <dt>Status</dt>
+            <dd><span class="ok">Open to opportunities</span></dd>
+          </div>
+        </dl>
+      </div>
     </div>
-</div>
-    <!-- Skill End -->
+  </section>
 
+  <!-- ===================== EXPERIENCE ===================== -->
+  <section class="band band-alt" id="experience">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="sec-label">02 — Experience</div>
+        <h2>Four years across AI research, platform engineering and backend systems.</h2>
+      </div>
 
-
-
-    <!-- Qualification Start -->
-    <div class="container-fluid py-5" id="qualification">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Quality</h1>
-                <h1 class="position-absolute text-uppercase text-dark">Education & Expericence</h1>
+      <div class="tl">
+        <!-- 1 -->
+        <div class="tl-item rv">
+          <article class="job">
+            <div class="job-top">
+              <h3>AI/ML Engineer</h3>
+              <span class="when">Jan 2026 — Present</span>
             </div>
-                        <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h3 class="mb-4">My Expericence</h3>
-                    <div class="border-left border-primary pt-2 pl-4 ml-2">
-                        <div class="position-relative ex-me mb-4">
-                            <i class="far fa-dot-circle text-dark position-absolute"
-                                style="top: 2px; left: -35px; font-size: 22px;"></i>
-                            <h5 class="font-weight-bold mb-1">Automation Engineer Co-Op </h5>
-                            <p class="mb-2"><strong>Pfizer Inc, Groton, CT </strong> | <small>January 2025 -
-                                    September 2025</small></p>
-                        </div>
-                        <div class="position-relative ex-me mb-4">
-                            <i class="far fa-dot-circle text-dark position-absolute"
-                                style="top: 2px; left: -35px; font-size: 22px;"></i>
-                            <h5 class="font-weight-bold mb-1">Graduate Research Assistant </h5>
-                            <p class="mb-2"><strong>Northeastern University, Boston, MA </strong> | <small>February 2024 -
-                                    Ongoing</small></p>
-                        </div>
-                        <div class="position-relative ex-me mb-4">
-                            <i class="far fa-dot-circle text-dark position-absolute"
-                                style="top: 2px; left: -35px; font-size: 22px;"></i>
-                            <h5 class="font-weight-bold mb-1">SDE Intern</h5>
-                            <p class="mb-2"><strong>BMC Software Inc.</strong> | <small>01/2022 -
-                                    07/2022</small></p>
-                        </div>
-                    </div>
-                </div>
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h3 class="mb-4">My Education</h3>
-                    <div class="border-left border-primary pt-2 pl-4 ml-2">
-                        <div class="position-relative ex-me mb-4">
-                            <i class="far fa-dot-circle text-dark position-absolute"
-                                style="top: 2px; left: -35px; font-size: 22px;"></i>
-                            <h5 class="font-weight-bold mb-1">Master's in Computer Software Engineering Systems </h5>
-                            <p class="mb-2"><strong>Northeastern University Boston </strong> | <small>2023 -
-                                    2025</small></p>
-                                    <p>CGPA: 3.85/4.0</p>
-
-                        </div>
-                        <div class="position-relative ex-me mb-4">
-                            <i class="far fa-dot-circle text-dark position-absolute"
-                                style="top: 2px; left: -35px; font-size: 22px;"></i>
-                            <h5 class="font-weight-bold mb-1">Bachelor in Computer Engineering</h5>
-                            <p class="mb-2"><strong>Savitribai Phule Pune University </strong> | <small>2019 -
-                                    2023</small></p>
-                            <p>CGPA: 9.11/10.0</p>
-                        </div>
-                        <div class="position-relative ex-me mb-4">
-                            <i class="far fa-dot-circle text-dark position-absolute"
-                                style="top: 2px; left: -35px;  font-size: 22px;"></i>
-                            <h5 class="font-weight-bold mb-1">Pace Science College, Andheri, Mumbai</h5>
-                            <p class="mb-2"><strong>Higher Secondary Certificate</strong> | <small>2019</small></p>
-                            <p>Percentage:75%</p>
-                        </div>
-                        <div class="position-relative ex-me mb-4">
-                            <i class="far fa-dot-circle text-dark position-absolute"
-                                style="top: 2px; left: -35px;  font-size: 22px;"></i>
-                            <h5 class="font-weight-bold mb-1">Jai Hind High School, Dhule</h5>
-                            <p class="mb-2"><strong>Secondary School Certificate</strong> | <small>2017</small></p>
-                            <p>Percentage : 98%</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <h3 class="mb-4">My Projects</h3>
-
-                    
-                    <div class="border-left border-primary pt-2 pl-4 ml-2">
-                        <div class="position-relative ex-me mb-4">
-                            <i class="far fa-dot-circle text-dark position-absolute"
-                                style="top: 2px;left: -35px;  font-size: 22px;"></i>
-                            <h5 class="font-weight-bold mb-1">Present:A better Way To presentation Analysis </h5>
-                            <p class="mb-2"><strong>(09/2021) to (12/2023)</strong> | <small> Full Stack App Development </small>
-                            </p>
-                            <p>• Produced power point presentation like app in react js which helps in reducing time for interaction and ease in user workflow up to 51% by simplifying User Interface (UI)
-                            </p><p>• Employed VS Code, TypeScript, and React Js for frontend development, while utilizing Next Js, Node Js, and Mongo DB for backend development. Additionally, Vercel was used for hosting the applications</p>
-                        </div>
-
-                        <div class="position-relative ex-me mb-4">
-                            <i class="far fa-dot-circle text-dark position-absolute"
-                                style="top: 2px;left: -35px;  font-size: 22px;"></i>
-                            <h5 class="font-weight-bold mb-1">MRI Image Enhancement for Brain Tumor Detection using
-                                Hybridization of Contrast Enhancement Techniques</h5>
-                            <p class="mb-2"><strong>(08/2021) to (05/2023)</strong> | <small> Healthcare and AI/ML Research Project At
-                                    College </small>
-                            </p>
-                            <p>• Developed an algorithmic model in Jupyter Notebooks and MATLAB to enhance the quality of blurry and low
-brightness MRI images by 78.1%, which aid in improved brain tissue diagnosis
-                            </p><p>• Deployed hybridization techniques including Fuzzy, HE, CLAHE, AHE, RMSHE, used various matrices, and ML
-algorithms as CNN, SVM, KNN, Decision Trees</p>
-<p>• Presented and published a research paper at the IEEE Conference 2022 (ICKES). “Fusion based Image
-Enhancement Approach for Brain Tumor Detection” second version of the research has been issued in Scopus
-Index journal IJRITCC 2022
- Technologies:Python,AI,ML,Jupyter Notebook, MATLAB.</p>
-                        </div>
-
-                        <div class="position-relative ex-me mb-4">
-                            <i class="far fa-dot-circle text-dark position-absolute"
-                                style="top: 2px;left: -35px;  font-size: 22px;"></i>
-                            <h5 class="font-weight-bold mb-1">VS Code Extension Development</h5>
-                            <p class="mb-2"><strong>(01/2022) to (07/2022)</strong> | <small> Project at BMC Software
-                                    Inc </small>
-                            </p>
-                            <p>• Reduced manual data entry tasks by 63% by developing a VS Code extension to interact with
-Microservices, extract data and display it in tabular format using VS Code WebView API</p>
-<p>• Designed the software using VS code, PostgreSQL, GitHub, JIRA, Maven, Microservices, and Junit 
-with HTML, CSS, JS, and TypeScript, Vue.JS followed software development life cycle and Agile workflow </p>
-<p>• Stayed updated with new developments and successfully communicating the project’s progress to the 
-development team </p>
-                        </div>
-
-                        <div class="position-relative ex-me mb-4">
-                            <i class="far fa-dot-circle text-dark position-absolute"
-                                style="top: 2px;left: -35px;  font-size: 22px;"></i>
-                            <h5 class="font-weight-bold mb-1">Olympics Data Analysis </h5>
-                            <p class="mb-2"><strong>(12/2023) to (02/2024)</strong> | <small>ETL, Data Analysis and Data Engineering </small>
-                            </p>
-                            <p>• Extracted Olympics data from the API using Azure Data Factory, to build end-to-end data pipeline
-                            </p><p>• Loaded raw data onto Azure Data Lake Storage for initial storage and accessibility </p><p>•Implemented data transformations using Spark code in Azure Databricks, to enhance the raw data</p>
-<p>• Analyzed data using Synapse Analytics via SQL queries, to generate insights and visualizations. Built accessory
-dashboard visualizations and reports on Power BI</p>
-                        </div>
-
-                        <div class="position-relative ex-me mb-4">
-                            <i class="far fa-dot-circle text-dark position-absolute"
-                                style="top: 2px;left: -35px;  font-size: 22px;"></i>
-                            <h5 class="font-weight-bold mb-1">Hospital Management System</h5>
-                            <p class="mb-2"><strong>(07/2021)</strong> | <small> Python MySQL Tkinter</small></p>
-                            <p>This application is designed using python GUI and used MySQL
-                                Database for backend. The application is also able to generate and
-                                print Prescription for patient.</p>
-                        </div>
-                        <div class="position-relative ex-me mb-4">
-                            <i class="far fa-dot-circle text-dark position-absolute"
-                                style="top: 2px;left: -35px;  font-size: 22px;"></i>
-                            <h5 class="font-weight-bold mb-1">Stock Price Prediction Using Machine Learning</h5>
-                            <p class="mb-2"><strong>(06/2021 - Present)</strong> | <small> Machine Learning</small></p>
-                            <p>Currently working on algorithms to use for project , basically the
-                                application will predict the future cost Price of Stock from previous datasets.</p>
-                        </div>
-
-                        <div class="position-relative ex-me mb-4">
-                            <i class="far fa-dot-circle text-dark position-absolute"
-                                style="top: 2px;left: -35px;  font-size: 22px;"></i>
-                            <h5 class="font-weight-bold mb-1">Student Database System</h5>
-                            <p class="mb-2"><strong>(06/2021)</strong> | <small>Python MySQL Tkinter</small></p>
-                            <p>This application is used to keep track of student information and
-                                and MySQL database is used and for GUI python</p>
-                        </div>
-                        <div class="position-relative ex-me mb-4">
-                            <i class="far fa-dot-circle text-dark position-absolute"
-                                style="top: 2px;left: -35px;  font-size: 22px;"></i>
-                            <h5 class="font-weight-bold mb-1">Bill Generation Site</h5>
-                            <p class="mb-2"><strong>(06/2020)</strong> | <small>Python</small></p>
-                            <p>Created a modular web application for daily customer use, enabling easy electricity bill
-                                payments. Developed with HTML, CSS, JavaScript, MySQL, and PHP.</p>
-                        </div>
-                        <div class="position-relative ex-me mb-4">
-                            <i class="far fa-dot-circle text-dark position-absolute"
-                                style="top: 2px;left: -35px;  font-size: 22px;"></i>
-                            <h5 class="font-weight-bold mb-1">Snake game</h5>
-                            <p class="mb-2"><strong>(02/2020)</strong> | <small>Python</small></p>
-                            <p>This game was designed</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="where">Pfizer Inc<span class="sep">·</span><span class="loc">Groton, CT</span></div>
+            <ul class="bullets">
+              <li>Architected an <strong>agentic AI platform</strong> for enterprise data ingestion and real-time
+                question answering on AWS (S3, Bedrock, EC2), saving <span class="m">800+</span> hours annually.</li>
+              <li>Cut end-to-end inference latency from <span class="m">2 minutes to 50 seconds</span> through
+                retrieval tuning, prompt/token optimisation (LLMLingua compression + semantic caching) and model
+                orchestration.</li>
+              <li>Designed <strong>LangGraph</strong> conversational agent workflows with reusable nodes for retrieval,
+                multimodal input and <strong>MCP</strong>-driven automated document generation — removing
+                <span class="m">25%</span> of manual operational overhead.</li>
+              <li>Built and deployed the full assistant platform in Python, FastAPI, React (TypeScript) and SQL,
+                containerised with <strong>Docker + Kubernetes</strong> to serve <span class="m">50+</span> scientists
+                with real-time inference.</li>
+              <li>Built an LLM/agent <strong>evaluation framework</strong> with LangSmith and RAGAS over a
+                <span class="m">300+</span> query eval set — measuring faithfulness, answer relevance and
+                hallucination rate, driving hallucination <span class="m">under 5%</span>.</li>
+              <li>Shipped production <strong>guardrails</strong> (PII redaction, prompt-injection filtering) via
+                Bedrock and routed traffic through a LiteLLM gateway for model routing and rate limiting, cutting API
+                costs <span class="m">25%</span>.</li>
+              <li>Served as AI/ML SME to <span class="m">10+</span> scientists, translating business needs into modular
+                GenAI infrastructure and cutting time-to-production by <span class="m">33%</span>.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">LangGraph</span><span class="tag">MCP</span><span class="tag">AWS Bedrock</span>
+              <span class="tag">FastAPI</span><span class="tag">React / TS</span><span class="tag">Kubernetes</span>
+              <span class="tag">RAGAS</span><span class="tag">LangSmith</span><span class="tag">LiteLLM</span>
             </div>
+          </article>
         </div>
+
+        <!-- 2 -->
+        <div class="tl-item rv">
+          <article class="job">
+            <div class="job-top">
+              <h3>AI/ML &amp; Software Automation Engineer, Co-Op</h3>
+              <span class="when">Jan 2025 — Sep 2025</span>
+            </div>
+            <div class="where">Pfizer Inc<span class="sep">·</span><span class="loc">Groton, CT</span></div>
+            <ul class="bullets">
+              <li>Architected an in-house <strong>multimodal AI platform</strong> combining LLMs, RAG, vector databases
+                and knowledge graphs — supporting <span class="m">400+</span> daily queries across document
+                intelligence and data exploration workflows.</li>
+              <li>Built production <strong>RAG pipelines</strong> with embeddings, vector search and metadata
+                filtering, raising enterprise retrieval relevance by <span class="m">30%</span>.</li>
+              <li>Lifted LLM output quality <span class="m">27%</span> via custom chunking, multi-step prompt chaining
+                and retrieval optimisation, measurably reducing hallucinations in production workflows.</li>
+              <li>Deployed a transformer-based (<strong>MolNexTR</strong>) NLP pipeline on HuggingFace to parse
+                domain-specific structured inputs, cross-referenced against a knowledge graph for
+                <span class="m">+27%</span> retrieval accuracy.</li>
+              <li>Engineered scalable <strong>REST APIs and microservices</strong> in Java, Spring Boot, Apache Camel
+                and Docker, supporting <span class="m">200K+</span> daily claim requests at <span class="m">p95 under
+                  2s</span>.</li>
+              <li>Reduced MySQL/PostgreSQL query execution time <span class="m">18%</span> by redesigning indexes and
+                refactoring SQL for critical workloads.</li>
+              <li>Developed a <strong>Bayesian optimisation</strong> workflow on HPC infrastructure, improving
+                parameter-search efficiency by <span class="m">90%</span>.</li>
+              <li>Implemented a computer vision system (YOLO, Faster R-CNN, AWS S3 on Dataiku DSS) for automatic video
+                labelling and workflow automation.</li>
+              <li>Co-authored two research abstracts for <strong>AIChE 2025</strong> on productionising AI workflows
+                and scalable data warehousing.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">RAG</span><span class="tag">Knowledge Graphs</span><span class="tag">HuggingFace</span>
+              <span class="tag">Spring Boot</span><span class="tag">Apache Camel</span><span class="tag">YOLO</span>
+              <span class="tag">Bayesian Opt</span><span class="tag">Dataiku</span><span class="tag">PostgreSQL</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- 3 -->
+        <div class="tl-item rv">
+          <article class="job">
+            <div class="job-top">
+              <h3>Research Assistant — Data Science &amp; Software</h3>
+              <span class="when">Feb 2024 — Dec 2024</span>
+            </div>
+            <div class="where">Northeastern University<span class="sep">·</span><span class="loc">Boston, MA</span>
+            </div>
+            <ul class="bullets">
+              <li>Built <strong>PyTorch</strong> deep-learning models (ViTNet, ResNet, ensembles) for image
+                classification and diagnostic prediction, improving accuracy by <span class="m">18%</span>.</li>
+              <li>Exported models to <strong>ONNX</strong> and ran INT8 inference to batch-process
+                <span class="m">500K+</span> images — <span class="m">2.5×</span> throughput with no diagnostic
+                accuracy loss.</li>
+              <li>Wrote custom <strong>C++ LibTorch</strong> wrappers bridging PyTorch models into lab data-logging
+                infrastructure, automating the diagnostic workflow and eliminating <span class="m">$10K</span> in
+                hardware upgrade costs.</li>
+              <li>Accelerated training with distributed GPU workloads on Oracle Cloud, cutting training time from
+                <span class="m">8 hours to 4</span>.</li>
+              <li>Engineered an end-to-end image processing pipeline on AWS S3 and SageMaker, automating storage,
+                retrieval and database integration at <span class="m">2×</span> throughput.</li>
+              <li>Implemented <strong>PageRank</strong> on Spark, integrating results with Elasticsearch to improve
+                search relevance scoring.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">PyTorch</span><span class="tag">ONNX / INT8</span><span class="tag">LibTorch (C++)</span>
+              <span class="tag">SageMaker</span><span class="tag">Distributed GPU</span><span class="tag">Spark</span>
+              <span class="tag">Elasticsearch</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- 4 -->
+        <div class="tl-item rv">
+          <article class="job">
+            <div class="job-top">
+              <h3>Software Development Engineer</h3>
+              <span class="when">Jan 2022 — Jul 2022</span>
+            </div>
+            <div class="where">BMC Software Inc<span class="sep">·</span><span class="loc">Pune, India</span></div>
+            <ul class="bullets">
+              <li>Developed a custom <strong>VS Code extension</strong> (Vue.js, WebView API, Spring Boot backend) to
+                automate microservices metadata retrieval — reducing manual data entry <span class="m">63%</span> and
+                eliminating context switching between IDEs and databases.</li>
+              <li>Built Java <strong>REST APIs</strong> with PostgreSQL that took service discovery from minutes to
+                seconds, measurably improving developer workflow efficiency.</li>
+              <li>Assembled the backend with Maven, PostgreSQL, REST and MVC architecture; shipped in Agile with
+                GitHub, JIRA and JUnit test automation.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">Vue.js</span>
+              <span class="tag">PostgreSQL</span><span class="tag">Maven</span><span class="tag">JUnit</span>
+            </div>
+          </article>
+        </div>
+      </div>
     </div>
-    <!-- Qualification End -->
+  </section>
 
+  <!-- ===================== EDUCATION ===================== -->
+  <section class="band" id="education">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="sec-label">03 — Education</div>
+        <h2>Computer engineering, with a research habit.</h2>
+      </div>
 
-
-
-
-    <!-- Portfolio Start -->
-    <div class="container-fluid pt-5 pb-3" id="portfolio" style="background-color: black;">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-black" style="-webkit-text-stroke: 1px #dee2e6;">Gallery</h1>
-                <h1 class="position-absolute text-uppercase text-white">My Portfolio</h1>
+      <div class="edu-grid">
+        <div class="edu rv">
+          <span class="cap"><svg><use href="#i-cap" /></svg></span>
+          <div>
+            <h3>Northeastern University</h3>
+            <div class="deg">M.S., Computer Engineering</div>
+            <div class="meta">
+              <span>Boston, MA</span>
+              <span>Sep 2023 — Dec 2025</span>
+              <span class="gpa">GPA 3.8 / 4.0</span>
             </div>
-            <div class="row">
-                <div class="col-12 text-center mb-2">
-                    <ul class="list-inline mb-4" id="portfolio-flters">
-
-                        <li class="btn btn-sm btn-outline-danger m-1" data-filter=".first">Certificate</li>
-
-                        <li class="btn btn-sm btn-outline-danger m-1" data-filter=".third">Art</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row portfolio-container ">
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-static overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/img1.png" alt="">
-                        <div class="portfolio-btn bg-dark d-flex align-items-center justify-content-center">
-                            <a href="img/img1.png" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-static overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/img2.png" alt="">
-                        <div class="portfolio-btn bg-dark d-flex align-items-center justify-content-center">
-                            <a href="img/img2.png" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-static overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/img4.png" alt="">
-                        <div class="portfolio-btn bg-dark d-flex align-items-center justify-content-center">
-                            <a href="img/img4.png" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-static overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/img5.png" alt="">
-                        <div class="portfolio-btn bg-dark d-flex align-items-center justify-content-center">
-                            <a href="img/img5.png" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-static overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/img6.png" alt="">
-                        <div class="portfolio-btn bg-dark d-flex align-items-center justify-content-center">
-                            <a href="img/img6.png" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-static overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/img9.png" alt="">
-                        <div class="portfolio-btn bg-dark d-flex align-items-center justify-content-center">
-                            <a href="img/img9.png" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-static overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/img10.png" alt="">
-                        <div class="portfolio-btn bg-dark d-flex align-items-center justify-content-center">
-                            <a href="img/img10.png" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-static overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/img11.png" alt="">
-                        <div class="portfolio-btn bg-dark d-flex align-items-center justify-content-center">
-                            <a href="img/img11.png" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-static overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/befimg2.png" alt="">
-                        <div class="portfolio-btn bg-dark d-flex align-items-center justify-content-center">
-                            <a href="img/befimg2.png" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-static overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/img7.png" alt="">
-                        <div class="portfolio-btn bg-dark d-flex align-items-center justify-content-center">
-                            <a href="img/img7.png" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-static overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/img8.png" alt="">
-                        <div class="portfolio-btn bg-dark d-flex align-items-center justify-content-center">
-                            <a href="img/img8.png" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-static overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/img3.png" alt="">
-                        <div class="portfolio-btn bg-dark d-flex align-items-center justify-content-center">
-                            <a href="img/img3.png" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-                    <div class="position-static overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/" alt="">
-                        <div class="portfolio-btn bg-dark d-flex align-items-center justify-content-center">
-                            <a href="img/certif5.PNG" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row portfolio-container ">
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
-                    <div class="position-static overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/download (1).jpg" alt="">
-                        <div class="portfolio-btn bg-dark d-flex align-items-center justify-content-center">
-                            <a href="img/download (1).jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
-                    <div class="position-static overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/download (3).jpg" alt="">
-                        <div class="portfolio-btn bg-dark d-flex align-items-center justify-content-center">
-                            <a href="img/download (3).jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
-                    <div class="position-static overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/download (4).jpg" alt="">
-                        <div class="portfolio-btn bg-dark d-flex align-items-center justify-content-center">
-                            <a href="img/download (4).jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
-                    <div class="position-static overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/download (5).jpg" alt="">
-                        <div class="portfolio-btn bg-dark d-flex align-items-center justify-content-center">
-                            <a href="img/download (5).jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
-                    <div class="position-static overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/download (7).jpg" alt="">
-                        <div class="portfolio-btn bg-dark d-flex align-items-center justify-content-center">
-                            <a href="img/download (7).jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
-                    <div class="position-static overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/download.jpg" alt="">
-                        <div class="portfolio-btn bg-dark d-flex align-items-center justify-content-center">
-                            <a href="img/download.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 portfolio-item third">
-                    <div class="position-static overflow-hidden mb-2">
-                        <img class="img-fluid rounded w-100" src="img/download9.jpg" alt="">
-                        <div class="portfolio-btn bg-dark d-flex align-items-center justify-content-center">
-                            <a href="img/download9.jpg" data-lightbox="portfolio">
-                                <i class="fa fa-plus text-white" style="font-size: 60px;"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+
+        <div class="edu rv">
+          <span class="cap"><svg><use href="#i-cap" /></svg></span>
+          <div>
+            <h3>University of Pune</h3>
+            <div class="deg">B.E., Computer Science &amp; Engineering</div>
+            <div class="meta">
+              <span>Pune, India</span>
+              <span>Jun 2019 — May 2023</span>
+              <span class="gpa">GPA 3.8 / 4.0</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- Portfolio End -->
+  </section>
 
+  <!-- ===================== SKILLS ===================== -->
+  <section class="band band-alt" id="skills">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="sec-label">04 — Skills</div>
+        <h2>The stack I reach for.</h2>
+        <p>Grouped by what I use it for, not by how impressive the logo looks.</p>
+      </div>
 
-
-
-
-
-    <!-- Contact Start -->
-    <div class="container-fluid py-5" id="contact">
-        <div class="container">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <h1 class="display-1 text-uppercase text-white" style="-webkit-text-stroke: 1px #dee2e6;">Contact</h1>
-                <h1 class="position-absolute text-uppercase text-dark">Contact Me</h1>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="contact-form text-center">
-                        <div id="success"></div>
-                        <form method="POST" action="mail.php">
-                            <div class="form-row">
-                                <div class="control-group col-sm-6">
-                                    <input type="text" class="form-control p-4" id="name" name="name"
-                                        placeholder="Your Name" required="required"
-                                        data-validation-required-message="Please enter your name" />
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="control-group col-sm-6">
-                                    <input type="email" class="form-control p-4" id="email" name="email"
-                                        placeholder="Your Email" />
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <input type="text" class="form-control p-4" id="subject" placeholder="Subject"
-                                    name="subject" required="required"
-                                    data-validation-required-message="Please enter a subject" />
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="control-group">
-                                <textarea class="form-control py-3 px-4" rows="5" id="message" placeholder="Message"
-                                    name="message" required="required"
-                                    data-validation-required-message="Please enter your message"></textarea>
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div>
-                                <button class="btn btn-outline-danger" type="submit" id="submit">Send
-                                    Message</button>
-                            </div>
-                        </form>
-                    </div>
-
-                </div>
-            </div>
-            <!-- Optional JavaScript -->
-            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-            <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-            crossorigin="anonymous"></script>
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-        <script>
-            $("#submit").click(function (e) {
-
-                var name = $("#name").val();
-                var email = $("#email").val();
-                var subject = $("#subject").val();
-                var message = $("#message").val();
-
-                if (name == '' || email == '' || subject == '' || message == '') {
-                    swal({
-                        title: "Fields Empty!",
-                        text: "Please enter the fields!",
-                        icon: "warning",
-                    });
-                }
-                else {
-                    $.ajax({
-                    
-                    method:"post",
-                    url:'contact.php',
-                    dataType:"json",
-                    data: {name:name, email:email, subject:subject, message:message},
-        
-                   success:function(data){
-                    swal({
-                        title: "Submitted!",
-                        text: "THANKYOU!",
-                        icon: "success",
-                    });
-                    },
-                           });
-   
-                }
-                e.preventDefault();
-            })
-        </script>
+      <div class="skills">
+        <div class="skillcard rv">
+          <h3><svg><use href="#i-brain" /></svg>AI &amp; Machine Learning</h3>
+          <div class="chips">
+            <span class="chip">LLMs</span><span class="chip">Generative AI</span><span class="chip">RAG</span>
+            <span class="chip">Agentic AI</span><span class="chip">LangGraph</span><span class="chip">LangChain</span>
+            <span class="chip">MCP</span><span class="chip">LangSmith</span><span class="chip">Langfuse</span>
+            <span class="chip">RAGAS</span><span class="chip">PyTorch</span><span class="chip">TensorFlow</span>
+            <span class="chip">HuggingFace</span><span class="chip">Transformers</span><span class="chip">NLP</span>
+            <span class="chip">Computer Vision</span><span class="chip">VLMs</span><span class="chip">Ensembles</span>
+            <span class="chip">Bayesian Optimisation</span><span class="chip">Statistics</span>
+          </div>
         </div>
 
-    </div> -->
-            <!-- Contact End -->
+        <div class="skillcard rv">
+          <h3><svg><use href="#i-code" /></svg>Languages</h3>
+          <div class="chips">
+            <span class="chip">Python</span><span class="chip">Java</span><span class="chip">TypeScript</span>
+            <span class="chip">JavaScript</span><span class="chip">C++</span><span class="chip">C#</span>
+            <span class="chip">SQL</span><span class="chip">R</span><span class="chip">Scala</span>
+            <span class="chip">CUDA</span><span class="chip">Bash / Linux</span>
+          </div>
+        </div>
 
+        <div class="skillcard rv">
+          <h3><svg><use href="#i-server" /></svg>Backend &amp; Web</h3>
+          <div class="chips">
+            <span class="chip">FastAPI</span><span class="chip">Spring Boot</span><span class="chip">REST APIs</span>
+            <span class="chip">Microservices</span><span class="chip">Node.js</span><span class="chip">React</span>
+            <span class="chip">Next.js</span><span class="chip">Angular</span><span class="chip">Tailwind</span>
+            <span class="chip">MVC</span><span class="chip">Apache Camel</span>
+          </div>
+        </div>
 
-            <!-- Footer Start -->
-            <div class="container-fluid bg-dark text-white mt-5 py-1 px-sm-1 px-md-5">
-                <div class="container text-center py-5">
-                    <div class="d-flex justify-content-center mb-4">
+        <div class="skillcard rv">
+          <h3><svg><use href="#i-db" /></svg>Data &amp; Storage</h3>
+          <div class="chips">
+            <span class="chip">PostgreSQL</span><span class="chip">MySQL</span><span class="chip">MongoDB</span>
+            <span class="chip">Redis</span><span class="chip">Elasticsearch</span><span class="chip">Neo4j</span>
+            <span class="chip">Pinecone</span><span class="chip">Milvus</span><span class="chip">ChromaDB</span>
+            <span class="chip">Spark</span><span class="chip">Kafka</span><span class="chip">MapReduce</span>
+          </div>
+        </div>
 
+        <div class="skillcard rv">
+          <h3><svg><use href="#i-cloud" /></svg>Cloud, DevOps &amp; MLOps</h3>
+          <div class="chips">
+            <span class="chip">AWS Bedrock</span><span class="chip">S3</span><span class="chip">SageMaker</span>
+            <span class="chip">Lambda</span><span class="chip">EC2</span><span class="chip">DynamoDB</span>
+            <span class="chip">Azure AI Foundry</span><span class="chip">GCP</span><span class="chip">Docker</span>
+            <span class="chip">Kubernetes</span><span class="chip">GitHub Actions</span><span class="chip">Jenkins</span>
+            <span class="chip">CI/CD</span><span class="chip">ONNX</span><span class="chip">Dataiku DSS</span>
+            <span class="chip">HPC</span>
+          </div>
+        </div>
 
-                        <a class="btn btn-danger btn-social mr-2"
-                            href="https://www.linkedin.com/in/govind-mudavadkar-26a3441b7/" target="_blank"><i
-                                class="fab fa-linkedin-in"></i></a>
-                        <a class="btn btn-danger btn-social mr-2"
-                            href="https://instagram.com/govind_mudavadkar?igshid=MzMyNGUyNmU2YQ==/" target="_blank"><i
-                                class="fab fa-instagram"></i></a>
-                        <a class="btn btn-danger btn-social mr-2" href="https://github.com/Govindrm7" target="_blank"><i
-                                class="fab fa-github"></i></a>
-                    </div>
-                    <p class="text-white justify-content-center mb-3">
-                        Thankyou for visiting
-                    </P>
-                </div>
+        <div class="skillcard rv">
+          <h3><svg><use href="#i-award" /></svg>Practices</h3>
+          <div class="chips">
+            <span class="chip">System Design</span><span class="chip">Data Structures &amp; Algorithms</span>
+            <span class="chip">OOP</span><span class="chip">Design Patterns</span><span class="chip">Agile / Scrum</span>
+            <span class="chip">LLM Evaluation</span><span class="chip">A/B Testing</span>
+            <span class="chip">Guardrails &amp; Safety</span><span class="chip">Testing (JUnit, PyTest)</span>
+            <span class="chip">Technical Writing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROJECTS ===================== -->
+  <section class="band" id="projects">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="sec-label">05 — Projects</div>
+        <h2>Things I built to find out whether they'd work.</h2>
+        <p>Research prototypes, GPU systems and full-stack products. Most are open source.</p>
+      </div>
+
+      <div class="proj-grid">
+        <!-- ESG -->
+        <article class="proj rv">
+          <div class="proj-top">
+            <h3><a href="https://github.com/Govindrm7/Resilient-Multi-Agent-Framework-for-Autonomous-ESG-Compliance-Auditing"
+                target="_blank" rel="noopener">Resilient Multi-Agent ESG Auditor</a></h3>
+            <a class="repo"
+              href="https://github.com/Govindrm7/Resilient-Multi-Agent-Framework-for-Autonomous-ESG-Compliance-Auditing"
+              target="_blank" rel="noopener" aria-label="View on GitHub"><svg><use href="#i-github" /></svg></a>
+          </div>
+          <div class="kind">Multi-agent RAG · Research</div>
+          <ul class="bullets">
+            <li>Four cooperating LangGraph agents — Supervisor, Retriever, Auditor, Critic — audit SEC 10-K filings for
+              ESG disclosures, running <strong>fully local</strong> on Llama 3.1/3.2 via Ollama.</li>
+            <li>A coverage-gap-aware Critic using three-sample self-consistency cut refusal rate
+              <span class="m">48% → 20%</span> and raised substantive answers <span class="m">52% → 76%</span> on a
+              tier-stratified 25-question evaluation.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">LangGraph</span><span class="tag">Llama 3.1</span><span class="tag">Hybrid RRF</span>
+            <span class="tag">BM25</span><span class="tag">RAGAS</span><span class="tag">Python</span>
+          </div>
+        </article>
+
+        <!-- Deal intelligence -->
+        <article class="proj rv">
+          <div class="proj-top">
+            <h3><a href="https://github.com/Govindrm7/deal-intelligence-ai" target="_blank"
+                rel="noopener">Deal Intelligence AI</a></h3>
+            <a class="repo" href="https://github.com/Govindrm7/deal-intelligence-ai" target="_blank" rel="noopener"
+              aria-label="View on GitHub"><svg><use href="#i-github" /></svg></a>
+          </div>
+          <div class="kind">Hierarchical Tree-Graph RAG</div>
+          <ul class="bullets">
+            <li>Parses 300-page M&amp;A and credit agreements from SEC EDGAR into unified hierarchical JSON trees, then
+              indexes them across a Neo4j knowledge graph and a LlamaIndex vector baseline.</li>
+            <li>Supports clause extraction with <strong>section-level citations</strong>, cross-document conflict
+              detection and multi-document synthesis — exactly where flat vector RAG loses document structure.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">LlamaIndex</span><span class="tag">Neo4j</span><span class="tag">LangGraph</span>
+            <span class="tag">PageIndex</span><span class="tag">Docling</span><span class="tag">Python</span>
+          </div>
+        </article>
+
+        <!-- CUDA k-mer -->
+        <article class="proj rv">
+          <div class="proj-top">
+            <h3><a href="https://github.com/Govindrm7/cuda-kmer-counter" target="_blank" rel="noopener">GPU K-mer
+                Counter</a></h3>
+            <a class="repo" href="https://github.com/Govindrm7/cuda-kmer-counter" target="_blank" rel="noopener"
+              aria-label="View on GitHub"><svg><use href="#i-github" /></svg></a>
+          </div>
+          <div class="kind">CUDA · High-performance computing</div>
+          <ul class="bullets">
+            <li>A two-stage CUDA pipeline hashes billions of overlapping genomic k-mers on-GPU and scatters them into
+              disjoint partitions, so every kernel's working set stays inside device memory.</li>
+            <li>Six documented optimisation iterations (v1 → v6.2) with per-partition hash tables and stream compaction
+              — the whole performance path is preserved in the repo.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">CUDA 11</span><span class="tag">C++17</span><span class="tag">GPU Memory</span>
+            <span class="tag">Stream Compaction</span><span class="tag">Make</span>
+          </div>
+        </article>
+
+        <!-- Melanoma -->
+        <article class="proj rv">
+          <div class="proj-top">
+            <h3><a href="https://github.com/Govindrm7/Melanoma-Detection-DDP-CUDA" target="_blank"
+                rel="noopener">Melanoma Detection at Scale</a></h3>
+            <a class="repo" href="https://github.com/Govindrm7/Melanoma-Detection-DDP-CUDA" target="_blank"
+              rel="noopener" aria-label="View on GitHub"><svg><use href="#i-github" /></svg></a>
+          </div>
+          <div class="kind">Distributed deep learning</div>
+          <ul class="bullets">
+            <li>Multi-GPU PyTorch <strong>DistributedDataParallel</strong> training across 4× Tesla K80s with
+              all-reduce gradient synchronisation on a 12.2 GB dermoscopic image dataset.</li>
+            <li>Dask-based CPU parallelism for image enhancement with measured speedup and efficiency curves across
+              1–8 cores, run on Northeastern's Discovery HPC cluster.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">PyTorch DDP</span><span class="tag">CUDA</span><span class="tag">Dask</span>
+            <span class="tag">Transfer Learning</span><span class="tag">HPC</span>
+          </div>
+        </article>
+
+        <!-- Cloud pipeline -->
+        <article class="proj rv">
+          <div class="proj-top">
+            <h3>Automated Cloud Deployment Pipeline</h3>
+          </div>
+          <div class="kind">Infrastructure-as-Code · DevOps</div>
+          <ul class="bullets">
+            <li>Architected a cloud-native user onboarding system on AWS using SNS, Lambda and SendGrid behind secure
+              VPC boundaries, security groups and explicit ingress rules.</li>
+            <li>Automated CI/CD with EC2 Auto Scaling, ELB and GitHub Actions running tests, baking AMIs and performing
+              rolling updates — reducing downtime by <span class="m">35%</span>.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">AWS</span><span class="tag">Lambda</span><span class="tag">SNS</span>
+            <span class="tag">EC2 Auto Scaling</span><span class="tag">GitHub Actions</span><span class="tag">IaC</span>
+          </div>
+        </article>
+
+        <!-- Talent Palette -->
+        <article class="proj rv">
+          <div class="proj-top">
+            <h3>Talent Palette</h3>
+          </div>
+          <div class="kind">Full-stack · MERN</div>
+          <ul class="bullets">
+            <li>A responsive MERN platform for artists built with React, TypeScript and object-oriented design,
+              enabling job creation and personalised content feeds.</li>
+            <li>Scalable REST APIs with JWT auth improved content discovery by <span class="m">20%</span>; deployed on
+              AWS EC2 with Kubernetes and Jenkins.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Node.js</span>
+            <span class="tag">MongoDB</span><span class="tag">JWT</span><span class="tag">Kubernetes</span>
+            <span class="tag">Jenkins</span>
+          </div>
+        </article>
+
+        <!-- Present -->
+        <article class="proj rv">
+          <div class="proj-top">
+            <h3><a href="https://github.com/Govindrm7/Present_A_Better_Way_For_Presentation" target="_blank"
+                rel="noopener">Present — A Better Way to Present</a></h3>
+            <a class="repo" href="https://github.com/Govindrm7/Present_A_Better_Way_For_Presentation" target="_blank"
+              rel="noopener" aria-label="View on GitHub"><svg><use href="#i-github" /></svg></a>
+          </div>
+          <div class="kind">Full-stack · Next.js</div>
+          <ul class="bullets">
+            <li>A presentation platform built around one idea: create a deck and share it with nothing but a link — no
+              exports, no attachments, no account friction for viewers.</li>
+            <li>Slide management with transitions, themes, import/export and live editing, built on Next.js API routes
+              and MongoDB, deployed to Vercel.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">TypeScript</span><span class="tag">Next.js</span><span class="tag">Node.js</span>
+            <span class="tag">MongoDB</span><span class="tag">Vercel</span>
+          </div>
+        </article>
+
+        <!-- Blog gen -->
+        <article class="proj rv">
+          <div class="proj-top">
+            <h3><a href="https://github.com/Govindrm7/Blog-Generation-using-LLama-2" target="_blank"
+                rel="noopener">Blog Generation with LLaMA 2</a></h3>
+            <a class="repo" href="https://github.com/Govindrm7/Blog-Generation-using-LLama-2" target="_blank"
+              rel="noopener" aria-label="View on GitHub"><svg><use href="#i-github" /></svg></a>
+          </div>
+          <div class="kind">Open-source LLM · Applied</div>
+          <ul class="bullets">
+            <li>An end-to-end blog generation app running Meta's open-source LLaMA 2 locally, orchestrated with
+              LangChain and served through a Streamlit interface.</li>
+            <li>Written as a step-by-step build guide — prompt templating, model loading and quantisation trade-offs
+              for running a 7B model on consumer hardware.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">LLaMA 2</span><span class="tag">LangChain</span><span class="tag">Streamlit</span>
+            <span class="tag">Python</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="more-wrap">
+        <a class="btn btn-ghost" href="https://github.com/Govindrm7?tab=repositories" target="_blank" rel="noopener">
+          <svg><use href="#i-github" /></svg>All repositories on GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PUBLICATIONS ===================== -->
+  <section class="band band-alt" id="publications">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="sec-label">06 — Publications</div>
+        <h2>Peer-reviewed research.</h2>
+        <p>Multimodal document intelligence, applied ML platforms and medical imaging.</p>
+      </div>
+
+      <div class="pubs rv">
+        <article class="pub">
+          <span class="idx">01</span>
+          <div class="pub-body">
+            <h3>KnovaAI: Advanced Multimodal AI for Chemistry-Aware Document Intelligence</h3>
+            <div class="venue"><em>AIChE</em><span class="yr">2026</span></div>
+          </div>
+        </article>
+
+        <article class="pub">
+          <span class="idx">02</span>
+          <div class="pub-body">
+            <h3>Machine Learning-Driven API Development via Automated Platforms</h3>
+            <div class="venue">
+              <em>AIChE</em><span class="yr">2025</span>
+              <a class="link" href="https://aiche.confex.com/aiche/2025/prelim.cgi/Paper/716182" target="_blank"
+                rel="noopener">Read<svg><use href="#i-ext" /></svg></a>
             </div>
-            <!-- Footer End -->
+          </div>
+        </article>
 
-            <!-- Scroll to Bottom -->
-            <i class="fa fa-2x fa-angle-down text-white scroll-to-bottom"></i>
+        <article class="pub">
+          <span class="idx">03</span>
+          <div class="pub-body">
+            <h3>Gastric Cancer Detection with Ensemble Deep Learning</h3>
+            <div class="venue">
+              <em>MDPI Diagnostics</em><span class="yr">2024</span>
+              <a class="link" href="https://www.mdpi.com/2075-4418/14/16/1746/" target="_blank"
+                rel="noopener">Read<svg><use href="#i-ext" /></svg></a>
+            </div>
+          </div>
+        </article>
 
-            <!-- Back to Top -->
-            <a href="#" class="btn btn-outline-dark px-0 back-to-top"><i class="fa fa-angle-double-up"></i></a>
+        <article class="pub">
+          <span class="idx">04</span>
+          <div class="pub-body">
+            <h3>4+ additional peer-reviewed papers</h3>
+            <div class="venue">
+              <em>Google Scholar</em>
+              <a class="link" href="https://scholar.google.com/citations?user=ya14RFUAAAAJ&hl=en" target="_blank"
+                rel="noopener">Full list<svg><use href="#i-ext" /></svg></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 
+  <!-- ===================== CERTIFICATIONS ===================== -->
+  <section class="band" id="certifications" hidden>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="sec-label">07 — Certifications</div>
+        <h2>Credentials worth the pixels.</h2>
+      </div>
 
-            <!-- JavaScript Libraries -->
-            <!-- JavaScript Libraries -->
-            <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-            <script src="lib/typed/typed.min.js"></script>
-            <script src="lib/easing/easing.min.js"></script>
-            <script src="lib/waypoints/waypoints.min.js"></script>
-            <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-            <script src="lib/isotope/isotope.pkgd.min.js"></script>
-            <script src="lib/lightbox/js/lightbox.min.js"></script>
+      <div class="certs" id="certTop"></div>
+      <div class="certs" id="certMore" hidden></div>
 
-            <!-- Contact Javascript File -->
-            <script src="mail/jqBootstrapValidation.min.js"></script>
-            <script src="mail/contact.js"></script>
+      <div class="more-wrap" id="certMoreWrap" hidden>
+        <button class="btn btn-ghost" type="button" id="certBtn" aria-expanded="false" aria-controls="certMore">
+          <svg><use href="#i-award" /></svg><span id="certBtnText">Show all certifications</span>
+        </button>
+      </div>
+    </div>
+  </section>
 
-            <!-- Template Javascript -->
-            <script src="js/main.js"></script>
+  <!-- ===================== CONNECT ===================== -->
+  <section class="band band-alt" id="connect">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="sec-label">08 — Connect</div>
+        <h2>Let's build something measurable.</h2>
+        <p>Fastest way to reach me is email. Everything else is below.</p>
+      </div>
+
+      <div class="connect-grid">
+        <a class="link-card rv" href="mailto:govindrmdhl8@gmail.com">
+          <span class="ic"><svg><use href="#i-mail" /></svg></span>
+          <span class="lc-body">
+            <span class="lc-t">Email</span>
+            <span class="lc-v">govindrmdhl8@gmail.com</span>
+          </span>
+        </a>
+
+        <a class="link-card rv" href="https://www.linkedin.com/in/govind-mudavadkar/" target="_blank" rel="noopener">
+          <span class="ic"><svg><use href="#i-linkedin" /></svg></span>
+          <span class="lc-body">
+            <span class="lc-t">LinkedIn</span>
+            <span class="lc-v">govind-mudavadkar</span>
+          </span>
+        </a>
+
+        <a class="link-card rv" href="https://github.com/Govindrm7" target="_blank" rel="noopener">
+          <span class="ic"><svg><use href="#i-github" /></svg></span>
+          <span class="lc-body">
+            <span class="lc-t">GitHub</span>
+            <span class="lc-v">@Govindrm7</span>
+          </span>
+        </a>
+
+        <a class="link-card rv" href="https://scholar.google.com/citations?user=ya14RFUAAAAJ&hl=en" target="_blank"
+          rel="noopener">
+          <span class="ic"><svg><use href="#i-scholar" /></svg></span>
+          <span class="lc-body">
+            <span class="lc-t">Google Scholar</span>
+            <span class="lc-v">Publications</span>
+          </span>
+        </a>
+
+        <a class="link-card rv" href="tel:+16178180459">
+          <span class="ic"><svg><use href="#i-phone" /></svg></span>
+          <span class="lc-body">
+            <span class="lc-t">Phone</span>
+            <span class="lc-v">(617) 818-0459</span>
+          </span>
+        </a>
+
+        <a class="link-card rv" href="resume/Govind_Mudavadkar_AI_ML_Resume.pdf" target="_blank" rel="noopener">
+          <span class="ic"><svg><use href="#i-doc" /></svg></span>
+          <span class="lc-body">
+            <span class="lc-t">Résumé</span>
+            <span class="lc-v">Download PDF</span>
+          </span>
+        </a>
+      </div>
+
+      <div class="cta-panel rv">
+        <h3>Hiring for AI/ML or software engineering?</h3>
+        <p>I'm open to roles where research and production engineering sit in the same job description. Happy to walk
+          through any system on this page.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="mailto:govindrmdhl8@gmail.com?subject=Opportunity%20for%20Govind">
+            <svg><use href="#i-mail" /></svg>Email me
+          </a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/govind-mudavadkar/" target="_blank"
+            rel="noopener"><svg><use href="#i-linkedin" /></svg>Connect on LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    <div class="wrap">
+      <p>© <span id="yr">2026</span> Govind Mudavadkar · Built from scratch, no template.</p>
+      <div class="fl">
+        <a href="https://github.com/Govindrm7" target="_blank" rel="noopener" aria-label="GitHub"><svg><use href="#i-github" /></svg></a>
+        <a href="https://www.linkedin.com/in/govind-mudavadkar/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#i-linkedin" /></svg></a>
+        <a href="https://scholar.google.com/citations?user=ya14RFUAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar"><svg><use href="#i-scholar" /></svg></a>
+        <a href="mailto:govindrmdhl8@gmail.com" aria-label="Email"><svg><use href="#i-mail" /></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="totop" id="toTop" type="button" aria-label="Back to top"><svg><use href="#i-up" /></svg></button>
+
+  <script>
+    (function () {
+      'use strict';
+
+      /* ---------- certifications data -------------------------------
+         Add entries here and the section + nav link appear automatically.
+         The first 4 show by default; the rest sit behind "Show all".
+         { name, issuer, date, url }  — url is optional.
+      --------------------------------------------------------------- */
+      var CERTIFICATIONS = [];
+
+      var $ = function (s, r) { return (r || document).querySelector(s); };
+      var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+      /* ---------- theme ---------- */
+      var root = document.documentElement;
+      try {
+        var saved = localStorage.getItem('gm-theme');
+        if (saved === 'light' || saved === 'dark') root.setAttribute('data-theme', saved);
+      } catch (e) { /* storage unavailable */ }
+
+      $('#themeBtn').addEventListener('click', function () {
+        var isDark = root.getAttribute('data-theme') === 'dark' ||
+          (!root.hasAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        var next = isDark ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        try { localStorage.setItem('gm-theme', next); } catch (e) { /* ignore */ }
+      });
+
+      /* ---------- mobile nav ---------- */
+      var navLinks = $('#navLinks'), navBtn = $('#navBtn');
+      function closeNav() {
+        navLinks.classList.remove('open');
+        navBtn.setAttribute('aria-expanded', 'false');
+        navBtn.innerHTML = '<svg><use href="#i-menu"/></svg>';
+      }
+      navBtn.addEventListener('click', function () {
+        var open = navLinks.classList.toggle('open');
+        navBtn.setAttribute('aria-expanded', String(open));
+        navBtn.innerHTML = '<svg><use href="#i-' + (open ? 'close' : 'menu') + '"/></svg>';
+      });
+      navLinks.addEventListener('click', function (e) { if (e.target.tagName === 'A') closeNav(); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeNav(); });
+
+      /* ---------- nav shadow + back to top ---------- */
+      var nav = $('#nav'), toTop = $('#toTop');
+      function onScroll() {
+        var y = window.scrollY;
+        nav.classList.toggle('is-stuck', y > 8);
+        toTop.classList.toggle('show', y > 700);
+        if (y < 140) $$('#navLinks a').forEach(function (a) { a.classList.remove('active'); });
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+      toTop.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      /* ---------- scroll spy ---------- */
+      var spyMap = {};
+      $$('#navLinks a').forEach(function (a) { spyMap[a.getAttribute('href').slice(1)] = a; });
+      var sections = Object.keys(spyMap)
+        .map(function (id) { return document.getElementById(id); })
+        .filter(Boolean);
+
+      if ('IntersectionObserver' in window) {
+        var spy = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            var link = spyMap[en.target.id];
+            if (!link) return;
+            if (en.isIntersecting) {
+              $$('#navLinks a').forEach(function (a) { a.classList.remove('active'); });
+              link.classList.add('active');
+            }
+          });
+        }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+        sections.forEach(function (s) { spy.observe(s); });
+
+        /* ---------- reveal on scroll ---------- */
+        var rev = new IntersectionObserver(function (entries, obs) {
+          entries.forEach(function (en, i) {
+            if (!en.isIntersecting) return;
+            en.target.style.transitionDelay = Math.min(i * 55, 220) + 'ms';
+            en.target.classList.add('in');
+            obs.unobserve(en.target);
+          });
+        }, { rootMargin: '0px 0px -8% 0px', threshold: .08 });
+        $$('.rv').forEach(function (el) { rev.observe(el); });
+      } else {
+        $$('.rv').forEach(function (el) { el.classList.add('in'); });
+      }
+
+      /* ---------- role typewriter ---------- */
+      var ROLES = [
+        'agentic AI systems.',
+        'multimodal RAG pipelines.',
+        'production ML platforms.',
+        'full-stack AI products.',
+        'things that get measured.'
+      ];
+      var out = $('#roleWord'), ri = 0, ci = 0, deleting = false;
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (reduce) {
+        out.textContent = ROLES[0];
+      } else {
+        (function tick() {
+          var word = ROLES[ri];
+          ci += deleting ? -1 : 1;
+          out.textContent = word.slice(0, ci);
+
+          var delay = deleting ? 32 : 62;
+          if (!deleting && ci === word.length) { deleting = true; delay = 1900; }
+          else if (deleting && ci === 0) { deleting = false; ri = (ri + 1) % ROLES.length; delay = 320; }
+          setTimeout(tick, delay);
+        })();
+      }
+
+      /* ---------- certifications render ---------- */
+      function certCard(c) {
+        var el = document.createElement(c.url ? 'a' : 'div');
+        el.className = 'cert';
+        if (c.url) { el.href = c.url; el.target = '_blank'; el.rel = 'noopener'; }
+        var badge = '<span class="badge"><svg><use href="#i-award"/></svg></span>';
+        var body = document.createElement('div');
+        var h = document.createElement('h3'); h.textContent = c.name;
+        var iss = document.createElement('div'); iss.className = 'issuer'; iss.textContent = c.issuer || '';
+        body.appendChild(h); body.appendChild(iss);
+        if (c.date) {
+          var d = document.createElement('div'); d.className = 'date'; d.textContent = c.date;
+          body.appendChild(d);
+        }
+        el.innerHTML = badge;
+        el.appendChild(body);
+        return el;
+      }
+
+      if (CERTIFICATIONS.length) {
+        $('#certifications').hidden = false;
+        $('#navCert').hidden = false;
+
+        var top = $('#certTop'), more = $('#certMore');
+        CERTIFICATIONS.slice(0, 4).forEach(function (c) { top.appendChild(certCard(c)); });
+
+        if (CERTIFICATIONS.length > 4) {
+          CERTIFICATIONS.slice(4).forEach(function (c) { more.appendChild(certCard(c)); });
+          $('#certMoreWrap').hidden = false;
+          $('#certBtn').addEventListener('click', function () {
+            var open = more.hidden;
+            more.hidden = !open;
+            this.setAttribute('aria-expanded', String(open));
+            $('#certBtnText').textContent = open
+              ? 'Show fewer'
+              : 'Show all certifications (' + CERTIFICATIONS.length + ')';
+          });
+          $('#certBtnText').textContent = 'Show all certifications (' + CERTIFICATIONS.length + ')';
+        }
+      }
+
+      /* ---------- misc ---------- */
+      $('#yr').textContent = new Date().getFullYear();
+    })();
+  </script>
 </body>
 
 </html>
