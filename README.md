@@ -1,38 +1,38 @@
-# Govind Mudavadkar — Portfolio
+# Govind Mudavadkar | Portfolio
 
 Personal portfolio site: <https://govindrm7.github.io/My_Portfolio/>
 
-A single-page, scroll-first site. No framework, no build step, no jQuery/Bootstrap —
-one `index.html` with inline CSS and ~150 lines of vanilla JS.
+A single-page, scroll-first site. No framework, no build step, no jQuery or
+Bootstrap. Just one `index.html` holding the markup, styles, scripts and an
+inline SVG icon sprite.
 
 ## Structure
 
 | Path | What it is |
 |------|------------|
-| `index.html` | The entire site — markup, styles, scripts, inline SVG icon sprite |
-| `assets/govind.jpg` | Headshot (640×640, used as a circular avatar) |
+| `index.html` | The entire site |
+| `assets/govind.jpg` | Headshot (640x640, rendered as a circular avatar) |
 
 ## Features
 
-- Light/dark theme that follows the OS and can be toggled (persisted to `localStorage`)
-- Scroll-spy navigation, reveal-on-scroll, and a role typewriter — all disabled under
-  `prefers-reduced-motion`
-- Responsive from 360px up, no horizontal overflow
-- External requests: Google Fonts only
+- Light and dark themes that follow the OS, with a toggle persisted to `localStorage`
+- Scroll-spy navigation and reveal-on-scroll, both disabled under `prefers-reduced-motion`
+- Responsive from 360px up, with no horizontal overflow
+- Google Fonts is the only external request
 
 ## Editing
 
-**Certifications** — add objects to the `CERTIFICATIONS` array near the top of the
-`<script>` block. The section and its nav link appear automatically; the first four
-show by default and the rest sit behind a "Show all" toggle.
+**Certifications.** Add objects to the `CERTIFICATIONS` array near the top of
+the `<script>` block. The section and its nav link appear automatically. The
+first four show by default and the rest sit behind a "Show all" toggle.
 
 ```js
 var CERTIFICATIONS = [
-  { name: 'Certificate name', issuer: 'Issuer', date: 'Mar 2026', url: 'https://…' }
+  { name: 'Certificate name', issuer: 'Issuer', date: 'Mar 2026', url: 'https://...' }
 ];
 ```
 
-**Everything else** — edit the relevant `<section>` directly.
+**Everything else.** Edit the relevant `<section>` directly.
 
 ## Local preview
 
