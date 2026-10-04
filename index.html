@@ -517,7 +517,7 @@
     }
     .job .where {
       font-size: 14px; font-weight: 500; color: var(--brand);
-      margin-bottom: 14px;
+      margin-bottom: 15px;
     }
     .job .where .sep { color: var(--ink-3); font-weight: 400; margin-inline: 6px; }
     .job .where .loc { color: var(--ink-3); font-weight: 400; }
@@ -534,11 +534,10 @@
       background: color-mix(in srgb, var(--brand) 55%, transparent);
     }
     .bullets strong { color: var(--ink); font-weight: 600; }
-    .job-line { font-size: 15.2px; line-height: 1.68; color: var(--ink-2); margin: 0; }
-    .job-line strong { color: var(--ink); font-weight: 600; }
     .m { font-family: var(--font-mono); font-size: .93em; font-weight: 500; color: var(--ink); }
 
     .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 15px; }
+    .job .tags { margin-top: 0; }
     .tag {
       font-family: var(--font-mono); font-size: 11.5px; font-weight: 400;
       color: var(--ink-2); background: var(--bg-alt);
@@ -577,7 +576,10 @@
     /* ============================================================
        SKILLS
        ============================================================ */
-    .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 16px; }
+    .skills {
+      display: grid; gap: 16px; align-items: start;
+      grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    }
     .skillcard {
       background: var(--card); border: 1px solid var(--line);
       border-radius: var(--radius); padding: 20px;
@@ -704,7 +706,7 @@
     /* ============================================================
        CONNECT
        ============================================================ */
-    .connect-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(282px, 100%), 1fr)); gap: 14px; }
+    .connect-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(238px, 100%), 1fr)); gap: 14px; }
     .link-card {
       display: flex; align-items: center; gap: 14px;
       background: var(--card); border: 1px solid var(--line);
@@ -735,8 +737,9 @@
     }
     .link-card .lc-v {
       display: block; font-size: 14.3px; font-weight: 600; color: var(--ink);
-      line-height: 1.4; overflow-wrap: anywhere;
+      line-height: 1.38;
     }
+    .link-card .lc-v .nb { white-space: nowrap; }
 
     .cta-panel {
       margin-top: 26px;
@@ -818,9 +821,6 @@
       <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <rect x="2" y="4" width="20" height="16" rx="2.5" />
         <path d="m2.5 6.5 8.4 6a2 2 0 0 0 2.2 0l8.4-6" />
-      </symbol>
-      <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z" />
       </symbol>
       <symbol id="i-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M14 4h6v6M20 4 10 14M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5" />
@@ -914,10 +914,9 @@
           <div class="roleline">AI/ML Engineer<span class="rl-sep">·</span>Software Engineer</div>
 
           <p class="hero-lede">
-            I build <strong style="color:var(--ink);font-weight:600">agentic AI systems</strong> — and the evaluation,
-            benchmarking and observability that make them trustworthy once they're live. Then I ship the whole thing:
-            FastAPI, React, Docker and Kubernetes on AWS. Proof of concept to production, not proof of concept to
-            slide deck.
+            I build and deploy <strong style="color:var(--ink);font-weight:600">agentic AI</strong> from proof of
+            concept to production — with the evaluation, observability and guardrails that keep it reliable once
+            it's live.
           </p>
 
           <div class="cta-row">
@@ -942,36 +941,24 @@
     <div class="wrap">
       <div class="sec-head rv">
         <div class="sec-label">01 — About</div>
-        <h2>Research-grade AI, production-grade engineering.</h2>
+        <h2>Demos are easy. Production is the job.</h2>
       </div>
 
       <div class="about-grid">
         <div class="about-body rv">
           <p>
-            The interesting part of <strong>agentic AI</strong> isn't getting a demo to work — it's everything that
-            has to be true before real people can depend on it. At <strong>Pfizer</strong> that means LangGraph
-            agents, multimodal RAG and MCP tooling, but just as much it means the eval harness, the benchmark suite
-            and the <strong>observability layer</strong> that tell you whether any of it is actually working this
-            week.
-          </p>
-          <p>
-            Most GenAI work dies somewhere between proof of concept and production. The gap is rarely the model — it's
-            everything around it. Retrieval quality you can measure instead of eyeball. Hallucination rates you track
-            instead of hope about. Guardrails, cost and latency budgets, traces you can debug from at 2am. Closing that
-            gap is the part I'm good at.
+            Most GenAI work dies somewhere between proof of concept and production, and the gap is rarely the model —
+            it's everything around it. Retrieval quality you can measure instead of eyeball. Hallucination rates you
+            track instead of hope about. Guardrails, cost and latency budgets, traces you can actually debug from.
+            Closing that gap is what I do at <strong>Pfizer</strong>, where I build LangGraph agents, multimodal RAG
+            and MCP tooling — and the evaluation and <strong>observability</strong> that keep them honest.
           </p>
           <p>
             I'm a software engineer as much as an ML one. I came up through backend work — Java, Spring Boot and REST
-            APIs at <strong>BMC Software</strong> — spent two years training PyTorch vision models as a research
-            assistant, and now build <strong>full-stack products end to end</strong>: FastAPI services, React front
-            ends, Docker and Kubernetes on AWS, CI/CD and all. Increasingly that includes
-            <strong>agentic software development</strong> itself — coding agents and MCP tooling as part of how the
-            work gets done, not just what gets built.
-          </p>
-          <p>
-            Alongside it I write research: seven-plus peer-reviewed papers across medical imaging, document
-            intelligence and multi-agent systems, most recently on coverage-gap-aware multi-agent RAG for ESG
-            compliance auditing.
+            APIs at <strong>BMC Software</strong> — trained PyTorch vision models as a research assistant, and now
+            build <strong>full-stack products end to end</strong>: FastAPI services, React front ends, Docker and
+            Kubernetes on AWS. Alongside it I write research — seven-plus peer-reviewed papers across medical imaging,
+            document intelligence and multi-agent systems.
           </p>
         </div>
 
@@ -1030,10 +1017,6 @@
               <span class="when">Jan 2026 — Present</span>
             </div>
             <div class="where">Pfizer Inc<span class="sep">·</span><span class="loc">Groton, CT</span></div>
-            <p class="job-line">Architect and ship the enterprise <strong>agentic AI platform</strong> — LangGraph
-                agents, multimodal RAG and MCP tooling behind a FastAPI and React product on AWS — with the eval
-                harness, guardrails, LLM gateway and tracing that keep it trustworthy in production. AI/ML SME to the
-                scientists who use it.</p>
             <div class="tags">
               <span class="tag">LangGraph</span><span class="tag">MCP</span><span class="tag">AWS Bedrock</span>
               <span class="tag">FastAPI</span><span class="tag">React / TS</span><span class="tag">Kubernetes</span>
@@ -1051,10 +1034,6 @@
               <span class="when">Jan 2025 — Sep 2025</span>
             </div>
             <div class="where">Pfizer Inc<span class="sep">·</span><span class="loc">Groton, CT</span></div>
-            <p class="job-line">Built the in-house <strong>multimodal AI platform</strong> — production RAG over
-                vector databases and knowledge graphs for enterprise document intelligence — alongside the Java and
-                Spring Boot microservices, SQL workloads and computer-vision automation it ran on. Co-authored two
-                AIChE 2025 research abstracts.</p>
             <div class="tags">
               <span class="tag">RAG</span><span class="tag">Knowledge Graphs</span><span class="tag">HuggingFace</span>
               <span class="tag">Spring Boot</span><span class="tag">Apache Camel</span><span class="tag">YOLO</span>
@@ -1072,9 +1051,6 @@
             </div>
             <div class="where">Northeastern University<span class="sep">·</span><span class="loc">Boston, MA</span>
             </div>
-            <p class="job-line">Trained <strong>PyTorch</strong> vision models for diagnostic imaging, then made
-                them fast — ONNX INT8 inference over 500K+ images, distributed GPU training, and a C++ LibTorch bridge
-                into lab data infrastructure.</p>
             <div class="tags">
               <span class="tag">PyTorch</span><span class="tag">ONNX / INT8</span><span class="tag">LibTorch (C++)</span>
               <span class="tag">SageMaker</span><span class="tag">Distributed GPU</span><span class="tag">Spark</span>
@@ -1091,9 +1067,6 @@
               <span class="when">Jan 2022 — Jul 2022</span>
             </div>
             <div class="where">BMC Software Inc<span class="sep">·</span><span class="loc">Pune, India</span></div>
-            <p class="job-line">Built developer tooling — a <strong>VS Code extension</strong> over a Spring Boot
-                backend that pulled microservices metadata straight into the IDE — plus the Java REST APIs and
-                PostgreSQL schema behind it.</p>
             <div class="tags">
               <span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">Vue.js</span>
               <span class="tag">PostgreSQL</span><span class="tag">Maven</span><span class="tag">JUnit</span>
@@ -1155,12 +1128,16 @@
         <div class="skillcard rv">
           <h3><svg><use href="#i-brain" /></svg>AI &amp; Machine Learning</h3>
           <div class="chips">
-            <span class="chip">LLMs</span><span class="chip">Generative AI</span><span class="chip">RAG</span>
+            <span class="chip">LLMs (Claude, GPT, Llama)</span><span class="chip">Generative AI</span>
             <span class="chip">Agentic AI</span><span class="chip">LangGraph</span><span class="chip">LangChain</span>
-            <span class="chip">MCP</span><span class="chip">LangSmith</span><span class="chip">Langfuse</span>
-            <span class="chip">RAGAS</span><span class="chip">PyTorch</span><span class="chip">TensorFlow</span>
-            <span class="chip">HuggingFace</span><span class="chip">Transformers</span><span class="chip">NLP</span>
-            <span class="chip">Computer Vision</span><span class="chip">VLMs</span><span class="chip">Ensembles</span>
+            <span class="chip">MCP</span><span class="chip">RAG</span><span class="chip">Prompt Engineering</span>
+            <span class="chip">Fine-tuning</span><span class="chip">Evaluation (LangSmith, RAGAS)</span>
+            <span class="chip">Guardrails</span><span class="chip">Langfuse</span>
+            <span class="chip">Quantization (NF4, INT8)</span><span class="chip">Self-hosted LLM Serving</span>
+            <span class="chip">HuggingFace Transformers</span><span class="chip">PyTorch</span>
+            <span class="chip">TensorFlow</span><span class="chip">NLP</span>
+            <span class="chip">Computer Vision (YOLO, Faster R-CNN)</span><span class="chip">ResNet / ViT</span>
+            <span class="chip">VLMs</span><span class="chip">XGBoost</span><span class="chip">Ensembles</span>
             <span class="chip">Bayesian Optimisation</span><span class="chip">Statistics</span>
           </div>
         </div>
@@ -1182,6 +1159,7 @@
             <span class="chip">Microservices</span><span class="chip">Node.js</span><span class="chip">React</span>
             <span class="chip">Next.js</span><span class="chip">Angular</span><span class="chip">Tailwind</span>
             <span class="chip">MVC</span><span class="chip">Apache Camel</span>
+            <span class="chip">Event-Driven Architecture</span>
           </div>
         </div>
 
@@ -1192,6 +1170,7 @@
             <span class="chip">Redis</span><span class="chip">Elasticsearch</span><span class="chip">Neo4j</span>
             <span class="chip">Pinecone</span><span class="chip">Milvus</span><span class="chip">ChromaDB</span>
             <span class="chip">Spark</span><span class="chip">Kafka</span><span class="chip">MapReduce</span>
+            <span class="chip">Knowledge Graphs</span><span class="chip">ETL Pipelines</span>
           </div>
         </div>
 
@@ -1202,8 +1181,9 @@
             <span class="chip">Lambda</span><span class="chip">EC2</span><span class="chip">DynamoDB</span>
             <span class="chip">Azure AI Foundry</span><span class="chip">GCP</span><span class="chip">Docker</span>
             <span class="chip">Kubernetes</span><span class="chip">GitHub Actions</span><span class="chip">Jenkins</span>
-            <span class="chip">CI/CD</span><span class="chip">ONNX</span><span class="chip">Dataiku DSS</span>
-            <span class="chip">HPC</span>
+            <span class="chip">Terraform</span><span class="chip">CI/CD</span><span class="chip">MLflow</span>
+            <span class="chip">Observability &amp; Monitoring</span><span class="chip">ONNX</span>
+            <span class="chip">Dataiku DSS</span><span class="chip">HPC</span>
           </div>
         </div>
 
@@ -1213,7 +1193,7 @@
             <span class="chip">System Design</span><span class="chip">Data Structures &amp; Algorithms</span>
             <span class="chip">OOP</span><span class="chip">Design Patterns</span><span class="chip">Agile / Scrum</span>
             <span class="chip">LLM Evaluation</span><span class="chip">A/B Testing</span>
-            <span class="chip">Guardrails &amp; Safety</span><span class="chip">Testing (JUnit, PyTest)</span>
+            <span class="chip">Testing (JUnit, PyTest)</span>
             <span class="chip">Technical Writing</span>
           </div>
         </div>
@@ -1496,11 +1476,11 @@
       </div>
 
       <div class="connect-grid">
-        <a class="link-card rv" href="mailto:govindrmdhl8@gmail.com">
+        <a class="link-card rv" href="mailto:mudavatkar.govind@gmail.com">
           <span class="ic"><svg><use href="#i-mail" /></svg></span>
           <span class="lc-body">
             <span class="lc-t">Email</span>
-            <span class="lc-v">govindrmdhl8@gmail.com</span>
+            <span class="lc-v"><span class="nb">mudavatkar.govind</span><wbr><span class="nb">@gmail.com</span></span>
           </span>
         </a>
 
@@ -1528,14 +1508,6 @@
             <span class="lc-v">Publications</span>
           </span>
         </a>
-
-        <a class="link-card rv" href="tel:+16178180459">
-          <span class="ic"><svg><use href="#i-phone" /></svg></span>
-          <span class="lc-body">
-            <span class="lc-t">Phone</span>
-            <span class="lc-v">(617) 818-0459</span>
-          </span>
-        </a>
       </div>
 
       <div class="cta-panel rv">
@@ -1543,7 +1515,7 @@
         <p>I'm open to roles where research and production engineering sit in the same job description. Happy to walk
           through any system on this page.</p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="mailto:govindrmdhl8@gmail.com?subject=Opportunity%20for%20Govind">
+          <a class="btn btn-primary" href="mailto:mudavatkar.govind@gmail.com?subject=Opportunity%20for%20Govind">
             <svg><use href="#i-mail" /></svg>Email me
           </a>
           <a class="btn btn-ghost" href="https://www.linkedin.com/in/govind-mudavadkar/" target="_blank"
