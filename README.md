@@ -11,7 +11,6 @@ one `index.html` with inline CSS and ~150 lines of vanilla JS.
 |------|------------|
 | `index.html` | The entire site — markup, styles, scripts, inline SVG icon sprite |
 | `assets/govind.jpg` | Headshot (640×640, used as a circular avatar) |
-| `resume/` | Downloadable résumés (AI/ML and Software variants) |
 
 ## Features
 
