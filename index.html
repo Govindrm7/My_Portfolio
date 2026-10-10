@@ -624,6 +624,7 @@
     @media (min-width: 700px) { .proj-top { min-height: 2.9em; } }
     .proj h3 a { color: var(--ink); }
     .proj h3 a:hover { color: var(--brand); }
+    .proj-links { display: flex; gap: 7px; flex: none; }
     .proj .repo {
       display: inline-grid; place-items: center; flex: none;
       width: 30px; height: 30px; border-radius: 8px;
@@ -847,6 +848,14 @@
       <symbol id="i-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
         <path d="M21.5 8.5 12 3.8 2.5 8.5 12 13.2l9.5-4.7Z" />
         <path d="M6.3 10.8v5.1c0 1.7 2.6 3.1 5.7 3.1s5.7-1.4 5.7-3.1v-5.1M21.5 8.5v5.6" />
+      </symbol>
+      <symbol id="i-chip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="7" y="7" width="10" height="10" rx="2" />
+        <path d="M4 10h3M4 14h3M17 10h3M17 14h3M10 4v3M14 4v3M10 17v3M14 17v3" />
+      </symbol>
+      <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 3v16.5A1.5 1.5 0 0 0 4.5 21H21" />
+        <path d="m7 15 3.5-4.5 3 2.5L19 6" />
       </symbol>
       <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="m8 17-5-5 5-5M16 7l5 5-5 5M13.5 4l-3 16" />
@@ -1129,19 +1138,35 @@
 
       <div class="skills">
         <div class="skillcard rv">
-          <h3><svg><use href="#i-brain" /></svg>AI &amp; Machine Learning</h3>
+          <h3><svg><use href="#i-brain" /></svg>Generative &amp; Agentic AI</h3>
           <div class="chips">
             <span class="chip">LLMs (Claude, GPT, Llama)</span><span class="chip">Generative AI</span>
             <span class="chip">Agentic AI</span><span class="chip">LangGraph</span><span class="chip">LangChain</span>
             <span class="chip">MCP</span><span class="chip">RAG</span><span class="chip">Prompt Engineering</span>
-            <span class="chip">Fine-tuning</span><span class="chip">Evaluation (LangSmith, RAGAS)</span>
-            <span class="chip">Guardrails</span><span class="chip">Langfuse</span>
-            <span class="chip">Quantization (NF4, INT8)</span><span class="chip">Self-hosted LLM Serving</span>
-            <span class="chip">HuggingFace Transformers</span><span class="chip">PyTorch</span>
-            <span class="chip">TensorFlow</span><span class="chip">NLP</span>
-            <span class="chip">Computer Vision (YOLO, Faster R-CNN)</span><span class="chip">ResNet / ViT</span>
-            <span class="chip">VLMs</span><span class="chip">XGBoost</span><span class="chip">Ensembles</span>
-            <span class="chip">Bayesian Optimisation</span><span class="chip">Statistics</span>
+            <span class="chip">Guardrails</span><span class="chip">Evaluation (LangSmith, RAGAS)</span>
+            <span class="chip">Langfuse</span>
+          </div>
+        </div>
+
+        <div class="skillcard rv">
+          <h3><svg><use href="#i-chip" /></svg>Model Training &amp; Serving</h3>
+          <div class="chips">
+            <span class="chip">Fine-tuning (LoRA / PEFT)</span><span class="chip">Post-training (SFT, GRPO)</span>
+            <span class="chip">RL from Verifiable Rewards</span><span class="chip">PyTorch</span>
+            <span class="chip">TensorFlow</span><span class="chip">HuggingFace Transformers</span>
+            <span class="chip">vLLM</span><span class="chip">Self-hosted LLM Serving</span>
+            <span class="chip">Inference Optimization</span><span class="chip">Constrained Decoding</span>
+            <span class="chip">Quantization (NF4, INT8, fp8)</span><span class="chip">ONNX</span>
+          </div>
+        </div>
+
+        <div class="skillcard rv">
+          <h3><svg><use href="#i-chart" /></svg>ML, Vision &amp; Modelling</h3>
+          <div class="chips">
+            <span class="chip">NLP</span><span class="chip">Computer Vision (YOLO, Faster R-CNN)</span>
+            <span class="chip">ResNet / ViT</span><span class="chip">VLMs</span><span class="chip">XGBoost</span>
+            <span class="chip">Ensembles</span><span class="chip">Bayesian Optimisation</span>
+            <span class="chip">Statistics</span>
           </div>
         </div>
 
@@ -1185,8 +1210,8 @@
             <span class="chip">Azure AI Foundry</span><span class="chip">GCP</span><span class="chip">Docker</span>
             <span class="chip">Kubernetes</span><span class="chip">GitHub Actions</span><span class="chip">Jenkins</span>
             <span class="chip">Terraform</span><span class="chip">CI/CD</span><span class="chip">MLflow</span>
-            <span class="chip">Observability &amp; Monitoring</span><span class="chip">ONNX</span>
-            <span class="chip">Dataiku DSS</span><span class="chip">HPC</span>
+            <span class="chip">Observability &amp; Monitoring</span>
+            <span class="chip">Dataiku DSS</span><span class="chip">HPC / Slurm</span>
           </div>
         </div>
 
@@ -1196,6 +1221,8 @@
             <span class="chip">System Design</span><span class="chip">Data Structures &amp; Algorithms</span>
             <span class="chip">OOP</span><span class="chip">Design Patterns</span><span class="chip">Agile / Scrum</span>
             <span class="chip">LLM Evaluation</span><span class="chip">A/B Testing</span>
+            <span class="chip">Benchmark Design</span><span class="chip">Statistical Testing</span>
+            <span class="chip">Reproducibility</span>
             <span class="chip">Testing (JUnit, PyTest)</span>
             <span class="chip">Technical Writing</span>
           </div>
@@ -1214,6 +1241,36 @@
       </div>
 
       <div class="proj-grid">
+        <!-- LedgerMind -->
+        <article class="proj rv">
+          <div class="proj-top">
+            <h3><a href="https://github.com/Govindrm7/LedgerMind" target="_blank"
+                rel="noopener">LedgerMind</a></h3>
+            <span class="proj-links">
+              <a class="repo" href="https://govindrm7.github.io/LedgerMind/" target="_blank" rel="noopener"
+                aria-label="Open the results dashboard"><svg><use href="#i-ext" /></svg></a>
+              <a class="repo" href="https://github.com/Govindrm7/LedgerMind" target="_blank" rel="noopener"
+                aria-label="View on GitHub"><svg><use href="#i-github" /></svg></a>
+            </span>
+          </div>
+          <div class="kind">LLM post-training · Verified inference</div>
+          <ul class="bullets">
+            <li>A 4B open model, LoRA-fine-tuned then trained with <strong>GRPO against a deterministic
+              verifier</strong>, answers FinQA questions statistically tied with a frontier model
+              (<span class="m">78.5%</span> vs <span class="m">80.3%</span>, McNemar <span class="m">p = 0.38</span>)
+              at roughly <span class="m">600×</span> lower cost per query when self-hosted.</li>
+            <li>The model never writes the final number: it cites figures with source pointers and a computation
+              plan, a safe AST executor runs the plan, and a verifier checks every figure against the document, so
+              answers arrive with a full audit trail or a reason for refusal. Served on <strong>vLLM</strong> at
+              <span class="m">48.7 req/s</span> in fp8 on a single H200.</li>
+          </ul>
+          <div class="tags">
+            <span class="tag">GRPO</span><span class="tag">LoRA SFT</span><span class="tag">vLLM</span>
+            <span class="tag">PyTorch</span><span class="tag">fp8 / bf16</span><span class="tag">FinQA</span>
+            <span class="tag">Slurm</span><span class="tag">Python</span>
+          </div>
+        </article>
+
         <!-- ESG -->
         <article class="proj rv">
           <div class="proj-top">
